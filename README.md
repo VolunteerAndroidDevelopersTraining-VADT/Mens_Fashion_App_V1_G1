@@ -17,6 +17,8 @@
 <p align="center">
 
  ## To participate, take a fork and work on it, then send a pull request we will review it, once it's accepted you can include the project in your portfolio  
+ ### please use git flow Technique you can find mor about ( <a href="https://www.youtube.com/results?search_query=git+flow+%D8%B4%D8%B1%D8%AD">  git flow </a> )
+
   </b>
  </b>
  

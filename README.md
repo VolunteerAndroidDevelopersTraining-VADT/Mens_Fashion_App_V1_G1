@@ -14,7 +14,7 @@
 ### This repository was made under a non-profit initiative with the aim of developing developers by creating complete projects to assemble what was fully studied.
   ## You can join us through this link  ( <a href="bit.ly/android_T"> CLick Here </a> )
 </p>
-
+- [ ] Splash
 - [ ] Login
 - [ ] Register
 - [ ] Cart

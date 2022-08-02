@@ -24,10 +24,13 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import com.example.mensfashion.R
 import com.example.mensfashion.core.UiEvents
+import com.example.mensfashion.core.collectAsStateLifecycleAware
 import com.example.mensfashion.core.rememberFlow
 import com.example.mensfashion.core.ui.theme.YellowMain
 import com.example.mensfashion.favorite.domain.model.Favorite
@@ -35,6 +38,7 @@ import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import kotlinx.coroutines.flow.collectLatest
 
+@OptIn(ExperimentalLifecycleComposeApi::class)
 @Destination(start = true)
 @Composable
 fun FavoriteScreen(
@@ -42,8 +46,7 @@ fun FavoriteScreen(
     viewModel: FavoriteViewModel = hiltViewModel()
 ) {
 
-    val favoriteFlowLifecycleAware = rememberFlow(flow = viewModel.favoriteItems)
-    val favoriteItems: List<Favorite> by favoriteFlowLifecycleAware.collectAsState(initial = emptyList())
+    val favoriteItems: List<Favorite> by viewModel.favoriteItems.collectAsStateWithLifecycle(initialValue = emptyList())
     val scaffoldState = rememberScaffoldState()
 
     LaunchedEffect(key1 = true) {

@@ -1,6 +1,7 @@
 buildscript {
     ext {
         compose_version = '1.1.1'
+        lifecycle_version = "2.6.0-alpha01"
     }
     dependencies {
         classpath 'com.google.dagger:hilt-android-gradle-plugin:2.40.5'

@@ -14,6 +14,9 @@ fun String.isPassword(): Boolean {
     return (Pattern.compile("^(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[@_^%\$#?*&!-]).{8,16}"))
         .matcher(this.fromArabic()).matches()
 }
+fun String.isUserName(): Boolean { // may we add some more validations in the future
+    return this.isNotEmpty()
+}
 
 fun String.fromArabic(): String {
     var phoneOrName = this

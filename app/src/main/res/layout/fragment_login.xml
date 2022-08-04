@@ -32,10 +32,10 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_email"
             android:layout_width="match_parent"
-            android:inputType="textEmailAddress"
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/ic_email"
             android:hint="@string/email"
+            android:inputType="textEmailAddress"
             android:maxLength="25"
             android:paddingStart="@dimen/_16sdp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -49,6 +49,8 @@
         android:layout_marginEnd="@dimen/_16sdp"
         android:layout_marginBottom="@dimen/_24sdp"
         app:boxBackgroundColor="@color/white"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/orangy"
         app:boxBackgroundMode="outline"
         app:boxCornerRadiusBottomStart="@dimen/_16sdp"
         app:boxCornerRadiusTopEnd="@dimen/_16sdp"
@@ -60,7 +62,6 @@
             android:id="@+id/passward"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/ic_visibility_off"
             android:hint="@string/passward"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -84,21 +85,22 @@
         android:id="@+id/tv_not"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/not_registered_yet"
-        android:layout_marginTop="@dimen/_21sdp"
-        android:textColor="@color/darky"
         android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_21sdp"
+        android:text="@string/not_registered_yet"
+        android:textColor="@color/darky"
         android:textSize="@dimen/_18sdp"
-        app:layout_constraintTop_toBottomOf="@id/btn_login"
-       app:layout_constraintStart_toStartOf="@id/btn_login" />
+        app:layout_constraintStart_toStartOf="@id/btn_login"
+        app:layout_constraintTop_toBottomOf="@id/btn_login" />
+
     <TextView
         android:id="@+id/tv_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/creat_new_account"
         android:textColor="@color/orangy"
-
         android:textSize="@dimen/_21sdp"
-        app:layout_constraintTop_toTopOf="@id/tv_not"
-       app:layout_constraintStart_toEndOf="@+id/tv_not" />
+        app:layout_constraintBottom_toBottomOf="@id/tv_not"
+        app:layout_constraintStart_toEndOf="@+id/tv_not"
+        app:layout_constraintTop_toTopOf="@id/tv_not" />
 </androidx.constraintlayout.widget.ConstraintLayout>

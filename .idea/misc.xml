@@ -3,6 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/96654/AndroidStudioProjects/Mens_Fashion_App/app/src/main/res/drawable/et_cursor.xml" value="0.1595" />
+        <entry key="..\:/Users/96654/AndroidStudioProjects/Mens_Fashion_App/app/src/main/res/drawable/et_stroke.xml" value="0.1595" />
+        <entry key="..\:/Users/96654/AndroidStudioProjects/Mens_Fashion_App/app/src/main/res/drawable/ic_email.xml" value="0.1595" />
+        <entry key="..\:/Users/96654/AndroidStudioProjects/Mens_Fashion_App/app/src/main/res/drawable/ic_lock.xml" value="0.1595" />
+        <entry key="..\:/Users/96654/AndroidStudioProjects/Mens_Fashion_App/app/src/main/res/drawable/ic_oval_shape.xml" value="0.1" />
+        <entry key="..\:/Users/96654/AndroidStudioProjects/Mens_Fashion_App/app/src/main/res/drawable/ic_person.xml" value="0.1595" />
+        <entry key="..\:/Users/96654/AndroidStudioProjects/Mens_Fashion_App/app/src/main/res/drawable/ic_phone.xml" value="0.1595" />
+        <entry key="..\:/Users/96654/AndroidStudioProjects/Mens_Fashion_App/app/src/main/res/layout/activity_main.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/96654/AndroidStudioProjects/Mens_Fashion_App/app/src/main/res/layout/fragment_register.xml" value="0.16799999999999998" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.18229166666666666" />
       </map>
     </option>

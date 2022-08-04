@@ -2,4 +2,12 @@
     <string name="app_name">Men\'s Fashion</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Email</string>
+    <string name="passward">passward</string>
+    <string name="login">login</string>
+    <string name="creat_new_account">creat new account</string>
+    <string name="not_registered_yet">not registered yet?</string>
+    <string name="shope_now">Shope now</string>
+    <string name="sign_up">sign up</string>
+    <string name="user_name">user name</string>
 </resources>

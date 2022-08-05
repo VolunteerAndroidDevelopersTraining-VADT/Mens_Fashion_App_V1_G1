@@ -15,13 +15,14 @@ class RegisterViewModel() : ViewModel() {
             userName.isEmpty() -> {
                   "required"
             }
+            !email.isEmail() -> {
+                "invalid Email!"
+            }
             //!passward.isPassword() -> {
             passward.isEmpty() -> {
                 "invalid passward!"
             }
-            !email.isEmail() -> {
-                "invalid Email!"
-            }
+
             else -> ({
                 // check user existence, if not exist->successfully, else-> user alrady exist
                 "successfully\uD83C\uDF89"

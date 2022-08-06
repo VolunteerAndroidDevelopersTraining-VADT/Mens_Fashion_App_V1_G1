@@ -12,7 +12,7 @@ abstract class BaseFragment<bindingObj : ViewDataBinding> : Fragment() {
     abstract fun setViewBinding(): bindingObj
 
     private var _binding: bindingObj? = null
-    val binding: bindingObj = _binding!!
+    val binding: bindingObj get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = setViewBinding()

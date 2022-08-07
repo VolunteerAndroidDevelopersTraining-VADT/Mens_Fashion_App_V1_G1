@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/img_splash"
         android:layout_width="match_parent"
-        android:layout_height="619dp"
+        android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/welcome"
         app:layout_constraintBottom_toTopOf="@+id/btn_shope_now"

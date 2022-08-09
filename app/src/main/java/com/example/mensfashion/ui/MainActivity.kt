@@ -22,8 +22,11 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener{ _, destination, _ ->
 
             when(destination.id){
-                R.id.splashFragment -> hideBottomNav()
+                R.id.splashFragment ->{
+                  //  actionBar?.hide()
+                    hideBottomNav()}
 
+                R.id.loginFragment  ->hideBottomNav()
                 else ->showBottomNav()
           }
         }

@@ -12,6 +12,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
+
             android:src="@drawable/splash" />
 
         <Button
@@ -23,6 +24,8 @@
             android:drawableEnd="@drawable/ic_left_arrow"
             android:text="@string/shop_now"
             android:textAllCaps="false"
+            android:textSize="24sp"
+            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
+import com.example.mensfashion.App
 
 abstract class BaseFragment<bindingObj : ViewDataBinding,vm:ViewModel> : Fragment() {
     // set view binding in the child class
@@ -15,7 +16,9 @@ abstract class BaseFragment<bindingObj : ViewDataBinding,vm:ViewModel> : Fragmen
     abstract fun initializeViewModel():vm
 
     private var _binding: bindingObj? = null
-    val binding: bindingObj = _binding!!
+    val binding: bindingObj get() = _binding!!
+    val pref = App.pref
+
     lateinit var viewModel: vm
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = setViewBinding()
@@ -30,6 +33,6 @@ abstract class BaseFragment<bindingObj : ViewDataBinding,vm:ViewModel> : Fragmen
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding=null   // destroy the view binding
+        _binding = null   // destroy the view binding
     }
 }

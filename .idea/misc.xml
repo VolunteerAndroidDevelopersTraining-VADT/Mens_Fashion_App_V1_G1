@@ -4,12 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.179" />
+        <entry key="app/src/main/res/drawable/facebook_image.xml" value="0.1435" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.179" />
+        <entry key="app/src/main/res/drawable/oval_shap.xml" value="0.1415" />
         <entry key="app/src/main/res/layout-sw600dp/fragment_splash.xml" value="0.20681265206812652" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.17708333333333334" />
-        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.17708333333333334" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.2268178785857238" />
         <entry key="app/src/main/res/layout/fragment_register.xml" value="0.17708333333333334" />
+        <entry key="app/src/main/res/layout/fragment_registeration.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.18229166666666666" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.17708333333333334" />
       </map>

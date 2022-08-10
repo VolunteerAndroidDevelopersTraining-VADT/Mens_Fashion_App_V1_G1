@@ -7,4 +7,12 @@
     <string name="shop_now">shop now</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="forgetting_password">forgetting password</string>
+    <string name="login">login</string>
+    <string name="passward">password</string>
+    <string name="sign_up">sing up</string>
+    <string name="first_name">user Name</string>
+    <string name="confirm_password">confirm password</string>
 </resources>

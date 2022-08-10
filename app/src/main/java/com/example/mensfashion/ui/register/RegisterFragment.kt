@@ -11,7 +11,7 @@ import com.example.mensfashion.core.base.BaseFragment
 import com.example.mensfashion.databinding.FragmentRegisterBinding
 
 
-class RegisterFragment : BaseFragment<FragmentRegisterBinding,RegisterViewModel>() {
+class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
    private val registerViewModel:RegisterViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -20,5 +20,4 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding,RegisterViewModel>
 
     override fun setViewBinding(): FragmentRegisterBinding = FragmentRegisterBinding.inflate(layoutInflater)
 
-    override fun initializeViewModel(): RegisterViewModel = registerViewModel
 }

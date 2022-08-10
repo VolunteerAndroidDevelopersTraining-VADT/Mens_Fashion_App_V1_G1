@@ -12,8 +12,7 @@ import com.example.mensfashion.databinding.FragmentSplashBinding
 import com.example.mensfashion.utils.Constants
 import java.lang.invoke.ConstantCallSite
 
-class SplashFragment : BaseFragment<FragmentSplashBinding,SplashViewModel>() {
-    private  val splashViewModel:SplashViewModel by viewModels()
+class SplashFragment : BaseFragment<FragmentSplashBinding>() {
     override fun setViewBinding() = FragmentSplashBinding.inflate(layoutInflater)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -30,7 +29,6 @@ class SplashFragment : BaseFragment<FragmentSplashBinding,SplashViewModel>() {
 
     }
 
-    override fun initializeViewModel(): SplashViewModel = splashViewModel
 
     private fun isLogin():Boolean{
         return pref.retrieve<Boolean>(Constants.IS_LOGIN)==true

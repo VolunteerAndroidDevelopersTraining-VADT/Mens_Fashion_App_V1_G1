@@ -8,6 +8,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.mensfashion.R
 import com.example.mensfashion.core.base.BaseFragment
+import com.example.mensfashion.core.navigateTo
 import com.example.mensfashion.databinding.FragmentSplashBinding
 import com.example.mensfashion.utils.Constants
 import java.lang.invoke.ConstantCallSite
@@ -23,7 +24,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>() {
            else{
               // navController.navigate(R.id.action_splashFragment_to_loginFragment)
              }
-            navController.navigate(R.id.action_splashFragment_to_loginFragment)
+            navigateTo(R.id.action_splashFragment_to_loginFragment)
       }
 
 

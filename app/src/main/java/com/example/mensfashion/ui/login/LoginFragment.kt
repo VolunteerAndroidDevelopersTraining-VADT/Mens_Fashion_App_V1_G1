@@ -8,26 +8,25 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.viewbinding.ViewBinding
 import com.example.mensfashion.R
+import com.example.mensfashion.core.base.BaseFragment
 import com.example.mensfashion.databinding.FragmentLoginBinding
 import com.example.mensfashion.ui.MainActivity
 
-class LoginFragment : Fragment() {
-    private lateinit var binding: FragmentLoginBinding
+class LoginFragment : BaseFragment<FragmentLoginBinding>() {
+
     private val loginViewModel: LoginViewModel by viewModels()
     private lateinit var passward: String
     private lateinit var email: String
+
+    override fun setViewBinding(): FragmentLoginBinding {
+        return FragmentLoginBinding.inflate(layoutInflater)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentLoginBinding.inflate(layoutInflater)
-        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,15 +41,16 @@ class LoginFragment : Fragment() {
                     "invalid Email!" -> binding.layoutEmail.error = "invalid Email!"
                     "required"->binding.layoutPass.error= "required"
                     else->{
-                        val intent = Intent(requireContext(), MainActivity::class.java)
-                        startActivity(intent)
+                        findNavController().navigate(R.id.action_loginFragment2_to_homeFragment)
                     }
                 }
 
             }
         }
         binding.tvSignup.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+            findNavController().navigate(R.id.action_loginFragment2_to_registerFragment2)
         }
     }
+
+
 }

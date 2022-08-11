@@ -2,47 +2,35 @@ package com.example.mensfashion.ui.home
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
-import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.mensfashion.R
+import com.example.mensfashion.core.SecureSharedPreferences
+import com.example.mensfashion.core.base.BaseFragment
 import com.example.mensfashion.databinding.FragmentHomeBinding
-import com.example.mensfashion.ui.UserActivity
-import com.example.mensfashion.utils.ShardPref
+
+class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
 
-class HomeFragment : Fragment() {
-    private lateinit var binding: FragmentHomeBinding
+    override fun setViewBinding(): FragmentHomeBinding {
+        return FragmentHomeBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ShardPref.setLoggedIn(true)
 
-    }
+        SecureSharedPreferences.save(true, "loggedIn")
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val pressedCallback: OnBackPressedCallback = object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                requireActivity().finish()
-            }
-        }
-        requireActivity().onBackPressedDispatcher.addCallback(requireActivity(), pressedCallback)
 
-        binding= FragmentHomeBinding.inflate(layoutInflater)
-        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnSignOut.setOnClickListener {
-            ShardPref.setLoggedIn(false)
-            val intent = Intent(requireContext(), UserActivity::class.java)
-            startActivity(intent)
+
+            SecureSharedPreferences.save(false, "loggedIn")
+            findNavController().navigate(R.id.action_homeFragment_to_loginFragment2)
         }
     }
-
 }

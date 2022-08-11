@@ -23,8 +23,8 @@
             android:id="@+id/layout_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginVertical="16dp"
+            android:layout_marginHorizontal="@dimen/_32sdp"
+            android:layout_marginVertical="@dimen/_16sdp"
             app:boxBackgroundColor="@color/white"
             app:endIconDrawable="@drawable/ic_email"
             app:endIconMode="custom"
@@ -52,9 +52,8 @@
             android:layout_marginHorizontal="32dp"
             android:layout_marginTop="@dimen/_24sdp"
             android:layout_marginBottom="@dimen/_24sdp"
-            app:endIconDrawable="@drawable/ic_visibility_off"
-            app:endIconMode="custom"
             app:endIconTint="@color/orangy"
+            app:passwordToggleTint="@color/orangy"
             app:hintEnabled="false"
             app:layout_constraintStart_toStartOf="@+id/layout_email"
             app:layout_constraintTop_toBottomOf="@+id/layout_email"
@@ -65,6 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/passward"
+                android:padding="12dp"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 

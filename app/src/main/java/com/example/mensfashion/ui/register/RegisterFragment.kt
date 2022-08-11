@@ -8,27 +8,25 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.example.mensfashion.R
+import com.example.mensfashion.core.base.BaseFragment
 import com.example.mensfashion.databinding.FragmentRegisterBinding
 import com.example.mensfashion.ui.MainActivity
 
-class RegisterFragment : Fragment() {
-    private lateinit var binding: FragmentRegisterBinding
+class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
+
     private val registerViewModel: RegisterViewModel by viewModels()
     private lateinit var userName: String
     private lateinit var passward: String
     private lateinit var email: String
 
+    override fun setViewBinding(): FragmentRegisterBinding {
+        return  FragmentRegisterBinding.inflate(layoutInflater)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentRegisterBinding.inflate(layoutInflater)
-        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -58,8 +56,7 @@ class RegisterFragment : Fragment() {
                             " Done Successfully\uD83C\uDF89",
                             Toast.LENGTH_SHORT
                         ).show()
-                        val intent = Intent(requireContext(), MainActivity::class.java)
-                        startActivity(intent)
+                        findNavController().navigate(R.id.action_registerFragment2_to_homeFragment)
                     }
 
 
@@ -67,4 +64,6 @@ class RegisterFragment : Fragment() {
             }
         }
     }
+
+
 }

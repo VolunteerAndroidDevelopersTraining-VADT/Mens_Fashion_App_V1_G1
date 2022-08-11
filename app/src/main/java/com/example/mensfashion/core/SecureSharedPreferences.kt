@@ -1,22 +1,16 @@
 package com.example.mensfashion.core
 
-import android.R.attr.password
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
 import com.google.gson.GsonBuilder
-import java.io.UnsupportedEncodingException
-import java.lang.StringBuilder
-import java.security.InvalidAlgorithmParameterException
-import java.security.InvalidKeyException
 import java.security.NoSuchAlgorithmException
 import java.security.spec.InvalidKeySpecException
-import java.security.spec.InvalidParameterSpecException
-import javax.crypto.*
+import javax.crypto.Cipher
+import javax.crypto.SecretKey
 import javax.crypto.spec.SecretKeySpec
-import kotlin.Boolean as Boolean
 
 private const val PREFERENCES_FILE_NAME = "PREFERENCES_FILE_NAME"
 
@@ -25,7 +19,7 @@ private const val PREFERENCES_SECRET_KEY = "BVFDH6UROEN0JD898D1VTWWEHDR4GJ6S"
 
 object SecureSharedPreferences {
 
-     lateinit var preferences: SharedPreferences
+    lateinit var preferences: SharedPreferences
     private lateinit var refrance: SecureSharedPreferences
 
     fun initPreferences(context: Context): SecureSharedPreferences {

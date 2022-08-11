@@ -31,8 +31,6 @@
             android:layout_marginHorizontal="@dimen/_32sdp"
             android:layout_marginVertical="@dimen/_16sdp"
             app:boxBackgroundColor="@color/white"
-            app:boxBackgroundMode="outline"
-            app:boxStrokeWidth="@dimen/_2sdp"
             app:layout_constraintTop_toBottomOf="@+id/img_register">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -42,8 +40,7 @@
                 android:drawableEnd="@drawable/ic_person"
                 android:hint="@string/user_name"
                 android:maxLength="20"
-                android:padding="@dimen/_16sdp"
-                android:paddingStart="@dimen/_16sdp" />
+                android:padding="@dimen/_12sdp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -53,8 +50,6 @@
             android:layout_marginHorizontal="32dp"
             android:layout_marginVertical="@dimen/_16sdp"
             app:boxBackgroundColor="@color/white"
-            app:boxBackgroundMode="outline"
-            app:boxStrokeWidth="@dimen/_2sdp"
             app:layout_constraintTop_toBottomOf="@+id/layout_user_name">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -64,8 +59,7 @@
                 android:drawableEnd="@drawable/ic_email"
                 android:hint="@string/email"
                 android:maxLength="20"
-                android:padding="@dimen/_16sdp"
-                android:paddingStart="@dimen/_16sdp"
+                android:padding="@dimen/_12sdp"
                 android:text="@{registerViewModel.email}" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -76,9 +70,6 @@
             android:layout_marginHorizontal="32dp"
             android:layout_marginVertical="@dimen/_16sdp"
             app:boxBackgroundColor="@color/white"
-            app:boxBackgroundMode="outline"
-            app:boxStrokeWidth="@dimen/_2sdp"
-
             app:layout_constraintTop_toBottomOf="@+id/layout_email"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/orangy">
@@ -90,7 +81,7 @@
                 android:hint="@string/passward"
                 android:inputType="textPassword"
                 android:maxLength="20"
-                android:padding="@dimen/_16sdp"
+                android:padding="@dimen/_12sdp"
                 android:paddingStart="@dimen/_16sdp" />
         </com.google.android.material.textfield.TextInputLayout>
 

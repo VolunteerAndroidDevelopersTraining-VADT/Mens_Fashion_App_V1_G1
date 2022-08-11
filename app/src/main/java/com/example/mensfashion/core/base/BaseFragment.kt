@@ -24,7 +24,6 @@ abstract class BaseFragment<bindingObj : ViewDataBinding> : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = setViewBinding()
         navController=findNavController()
-        // can't understander what next 3 line do
         _binding?.let {
             it.executePendingBindings()
             it.lifecycleOwner = viewLifecycleOwner

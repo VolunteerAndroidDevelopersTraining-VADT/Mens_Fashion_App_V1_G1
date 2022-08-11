@@ -2,22 +2,23 @@ package com.example.mensfashion.ui.login
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.viewModels
 import com.example.mensfashion.core.base.BaseFragment
 import com.example.mensfashion.core.onclick
 import com.example.mensfashion.databinding.FragmentLoginBinding
 
 class LoginFragment :BaseFragment<FragmentLoginBinding>() {
     override fun setViewBinding(): FragmentLoginBinding = FragmentLoginBinding.inflate(layoutInflater)
-
+   private val loginViewModel:LoginViewModel by  viewModels()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpViewAnimation()
-       binding.loginBtn onclick :: call
+       binding.loginBtn onclick :: login
 
     }
 
-    private fun call() {
-        TODO("Not yet implemented")
+    private fun login() {
+        when(loginViewModel.isValid)
     }
 
     private fun setUpViewAnimation() {

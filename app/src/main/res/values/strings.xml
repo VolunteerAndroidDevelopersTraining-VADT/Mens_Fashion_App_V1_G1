@@ -10,9 +10,11 @@
     <string name="email">email</string>
     <string name="password">password</string>
     <string name="forgetting_password">forgetting password</string>
-    <string name="login">login</string>
+    <string name="login">Sign In</string>
     <string name="passward">password</string>
     <string name="sign_up">sing up</string>
     <string name="first_name">user Name</string>
     <string name="confirm_password">confirm password</string>
+    <string name="login_tab_title">Login</string>
+    <string name="signUp_tab_title">Sign up</string>
 </resources>

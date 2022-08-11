@@ -11,21 +11,18 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.mensfashion.App
 
-abstract class BaseFragment<bindingObj : ViewDataBinding,vm:ViewModel> : Fragment() {
+abstract class BaseFragment<bindingObj : ViewDataBinding> : Fragment() {
     // set view binding in the child class
     abstract fun setViewBinding(): bindingObj
     // set viewModel in child
-    abstract fun initializeViewModel():vm
     lateinit var navController: NavController
 
     private var _binding: bindingObj? = null
     val binding: bindingObj get() = _binding!!
     val pref = App.pref
 
-    lateinit var viewModel: vm
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = setViewBinding()
-        viewModel = initializeViewModel()
         navController=findNavController()
         // can't understander what next 3 line do
         _binding?.let {

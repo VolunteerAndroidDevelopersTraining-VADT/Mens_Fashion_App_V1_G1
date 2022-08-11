@@ -15,15 +15,15 @@
 
             android:src="@drawable/splash" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_splash"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="32dp"
-            android:backgroundTint="#FF9100"
+            android:backgroundTint="@color/orange"
             android:drawableEnd="@drawable/ic_left_arrow"
             android:text="@string/shop_now"
-            android:textAllCaps="false"
+           style="@style/ButtonStyle"
             android:textSize="24sp"
             android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"

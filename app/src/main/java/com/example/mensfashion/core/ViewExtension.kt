@@ -5,8 +5,8 @@ import android.view.View
 class ViewExtension {
 }
 
-fun View.onclick(onClick:()->Unit) {
-    this.setOnClickListener{
+ infix fun View.onclick(onClick:()->Unit) {
+    setOnClickListener{
         onClick()
     }
 }

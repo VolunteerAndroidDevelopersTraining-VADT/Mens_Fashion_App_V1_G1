@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_splashFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -35,4 +38,8 @@
         android:id="@+id/homeFragment"
         android:name="com.example.mensfashion.ui.home.HomeFragment"
         android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.mensfashion.ui.registeration.RegistrationFragment"
+        android:label="RegistrationFragment" />
 </navigation>

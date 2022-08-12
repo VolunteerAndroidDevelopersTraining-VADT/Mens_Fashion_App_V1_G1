@@ -1,20 +1,20 @@
 package com.example.mensfashion.ui.splash
 
 import android.os.Bundle
-import android.provider.SyncStateContract
 import android.view.View
-import androidx.fragment.app.viewModels
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import com.example.mensfashion.R
 import com.example.mensfashion.core.base.BaseFragment
 import com.example.mensfashion.core.navigateTo
 import com.example.mensfashion.databinding.FragmentSplashBinding
 import com.example.mensfashion.utils.Constants
-import java.lang.invoke.ConstantCallSite
 
 class SplashFragment : BaseFragment<FragmentSplashBinding>() {
-    override fun setViewBinding() = FragmentSplashBinding.inflate(layoutInflater)
+
+
+    override fun setViewBinding(): FragmentSplashBinding {
+        return FragmentSplashBinding.inflate(layoutInflater)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
          binding.btnSplash.setOnClickListener {

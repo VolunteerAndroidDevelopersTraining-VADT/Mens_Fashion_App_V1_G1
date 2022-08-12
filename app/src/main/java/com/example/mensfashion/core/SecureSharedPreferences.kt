@@ -19,7 +19,7 @@ private const val PREFERENCES_SECRET_KEY = "BVFDH6UROEN0JD898D1VTWWEHDR4GJ6S"
 
 object SecureSharedPreferences {
 
-     lateinit var preferences: SharedPreferences
+    lateinit var preferences: SharedPreferences
     private lateinit var refrance: SecureSharedPreferences
 
     fun initPreferences(context: Context): SecureSharedPreferences {

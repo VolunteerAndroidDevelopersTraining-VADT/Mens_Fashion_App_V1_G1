@@ -78,7 +78,7 @@
                 android:id="@+id/et_pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/passward"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:maxLength="20"
                 android:padding="@dimen/_12sdp"

@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="Widget.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxBackgroundColor">@color/white</item>
         <item name="boxCornerRadiusBottomEnd">12dp</item>
         <item name="boxCornerRadiusBottomStart">12dp</item>
         <item name="boxCornerRadiusTopStart">12dp</item>
         <item name="boxCornerRadiusTopEnd">12dp</item>
-        <item name="hintTextColor">#736756</item>
-        <item name="android:textColorHint">#736756</item>
-        <item name="android:textColor">@color/text_color</item>
+        <item name="hintTextColor">@color/hint_color</item>
+        <item name="android:textColorHint">@color/hint_color</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:textSize">14sp</item>
         <item name="hintEnabled">false</item>
         <item name="boxStrokeWidth">1dp</item>
-        <item name="boxStrokeColor">@color/orangy</item>
-        <item name="materialThemeOverlay">@style/Widget.App.EditTextLayout</item></style>
+        <item name="boxBackgroundColor">@color/dark_color</item>
+        <item name="boxStrokeColor">@color/stroke_colore</item>
+        <item name="materialThemeOverlay">@style/Widget.App.EditTextLayout</item>
+    </style>
 
     <style name="Widget.App.EditTextLayout" parent="">
         <item name="editTextStyle">@style/MyTextInputEditText</item>
@@ -21,9 +23,22 @@
 
     <style name="MyTextInputEditText" parent="@style/Widget.MaterialComponents.TextInputEditText.FilledBox">
         <item name="android:padding">16dp</item>
-        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/hint_color</item>
         <item name="android:textAlignment">viewStart</item>
     </style>
 
-    <color name="text_color">#1D1D1D</color>
+
+    <!-- THIS IS THE MAIN THEME -->
+    <style name="AppTheme" parent="@style/Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@color/orangy</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowLightStatusBar" >false</item>
+        <item name="android:windowTranslucentNavigation" >true</item>
+        <item name="android:statusBarColor" >@color/orangy</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
+
+    </style>
 </resources>

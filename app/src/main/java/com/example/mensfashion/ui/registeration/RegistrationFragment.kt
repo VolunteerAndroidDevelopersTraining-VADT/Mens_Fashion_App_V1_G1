@@ -20,8 +20,8 @@ class RegistrationFragment :BaseFragment<FragmentRegisterationBinding>(){
 
         setUpViewPagerWithTabLayout()
         addTabLayoutMediator()
-        setUpFacebookButton()
-        setUpGoogleButton()
+//        setUpFacebookButton()
+//        setUpGoogleButton()
         setUpTabLayout()
 
     }
@@ -54,21 +54,21 @@ class RegistrationFragment :BaseFragment<FragmentRegisterationBinding>(){
         }
     }
 
-     private  fun setUpFacebookButton(){
-         binding.fabFb.apply {
-             translationY= 300F
-             alpha=0f
-             animate().translationY(0f).alpha(1f).setDuration(1000).setStartDelay(400).start()
-         }
-     }
-    private  fun setUpGoogleButton(){
-        binding.fabGoogle.apply {
-            translationY=300F
-            alpha=0f
-            animate().translationY(0f).alpha(1f).setDuration(1000).setStartDelay(600).start()
-
-        }
-    }
+//     private  fun setUpFacebookButton(){
+//         binding.fabFb.apply {
+//             translationY= 300F
+//             alpha=0f
+//             animate().translationY(0f).alpha(1f).setDuration(1000).setStartDelay(400).start()
+//         }
+//     }
+//    private  fun setUpGoogleButton(){
+//        binding.fabGoogle.apply {
+//            translationY=300F
+//            alpha=0f
+//            animate().translationY(0f).alpha(1f).setDuration(1000).setStartDelay(600).start()
+//
+//        }
+    //}
     override fun setViewBinding(): FragmentRegisterationBinding = FragmentRegisterationBinding.inflate(layoutInflater)
 
 }

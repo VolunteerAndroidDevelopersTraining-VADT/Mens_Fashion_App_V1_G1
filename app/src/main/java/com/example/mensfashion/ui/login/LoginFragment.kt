@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.example.mensfashion.R
 import com.example.mensfashion.core.base.BaseFragment
+import com.example.mensfashion.core.navigateTo
 import com.example.mensfashion.databinding.FragmentLoginBinding
 import com.example.mensfashion.ui.MainActivity
 
@@ -24,10 +25,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
         return FragmentLoginBinding.inflate(layoutInflater)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -41,14 +38,14 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
                     "invalid Email!" -> binding.layoutEmail.error = "invalid Email!"
                     "required"->binding.layoutPass.error= "required"
                     else->{
-                        findNavController().navigate(R.id.action_loginFragment2_to_homeFragment)
+                       navigateTo(R.id.action_loginFragment2_to_homeFragment)
                     }
                 }
 
             }
         }
         binding.tvSignup.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment2_to_registerFragment2)
+            navigateTo(R.id.action_loginFragment2_to_registerFragment2)
         }
     }
 

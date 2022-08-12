@@ -24,6 +24,11 @@ our first app  <a href="https://github.com/osamasayed585/Shopping">Shopping App 
  
  </p>
 
+## Contributors tell now :
+- <a href="https://github.com/alihrhera">Ali Hrhera   </a>   <a href="https://linkedin.com/in/alihrhera" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="alihrhera" height="30" width="40" /></a>
+- <a href="https://github.com/doaaessam98">Doaa Essam </a>  <a href="https://www.linkedin.com/in/doaaessam" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="doaaessam" height="30" width="40" /></a>
+- <a href="https://github.com/AzizaHelmy"> Aziza Helmy </a> <a href="https://www.linkedin.com/in/aziza-helmy/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="aziza-helmy" height="30" width="40" /></a>
+
  ## TASKES 
 
 - [x] Splash

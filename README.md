@@ -33,8 +33,9 @@ our first app  <a href="https://github.com/osamasayed585/Shopping">Shopping App 
 
 - [x] Splash
 - [x] Login
-- [ ] Register
-- [ ] Home
+- [ ] Register   --> in progress
+- [ ] Home       --> in progress
+- [ ] product details 
 - [ ] Cart
 - [ ] Favorites
 - [ ] Profile

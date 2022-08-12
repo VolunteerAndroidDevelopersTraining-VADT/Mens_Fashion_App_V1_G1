@@ -26,8 +26,8 @@ our first app  <a href="https://github.com/osamasayed585/Shopping">Shopping App 
 
  ## TASKES 
 
-- [ ] Splash
-- [ ] Login
+- [x] Splash
+- [x] Login
 - [ ] Register
 - [ ] Home
 - [ ] Cart

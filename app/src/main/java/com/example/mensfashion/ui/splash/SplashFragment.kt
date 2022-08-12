@@ -19,13 +19,15 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>() {
         super.onViewCreated(view, savedInstanceState)
          binding.btnSplash.setOnClickListener {
            if (isLogin()){
-               // navController.navigate(R.id.action_splashFragment_to_homeFragment)
+                //navController.navigate(R.id.action_splashFragment_to_homeFragment)
            }
            else{
-              // navController.navigate(R.id.action_splashFragment_to_loginFragment)
-             }
-            navController.navigate(R.id.action_splashFragment_to_registrationFragment)
-      }
+               navController.navigate(R.id.action_splashFragment_to_registrationFragment)
+
+           }
+             navController.navigate(R.id.action_splashFragment_to_registrationFragment)
+
+         }
 
 
     }

@@ -23,17 +23,13 @@
         android:name="com.example.mensfashion.ui.login.LoginFragment"
         android:label="LoginFragment" >
         <action
-            android:id="@+id/action_loginFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.mensfashion.ui.register.RegisterFragment"
-        android:label="RegisterFragment" >
-        <action
-            android:id="@+id/action_registerFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-    </fragment>
+        android:label="RegisterFragment" />
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.mensfashion.ui.home.HomeFragment"
@@ -41,5 +37,9 @@
     <fragment
         android:id="@+id/registrationFragment"
         android:name="com.example.mensfashion.ui.registeration.RegistrationFragment"
-        android:label="RegistrationFragment" />
+        android:label="RegistrationFragment" >
+        <action
+            android:id="@+id/action_registrationFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

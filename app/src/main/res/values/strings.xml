@@ -17,4 +17,7 @@
     <string name="confirm_password">confirm password</string>
     <string name="login_tab_title">Login</string>
     <string name="signUp_tab_title">Sign up</string>
+    <string name="required">required</string>
+    <string name="invalid_password">invalidPassword</string>
+    <string name="invalid_email">invalidEmail</string>
 </resources>

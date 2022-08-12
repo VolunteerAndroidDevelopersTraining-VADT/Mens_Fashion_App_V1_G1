@@ -13,17 +13,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="32dp"
+
         >
 
 
+          <TextView
+              android:id="@+id/text_error"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="You should ensure password and email"
+              android:textColor="@color/red"
+              android:textSize="16sp"
+              android:visibility="gone"
+              android:layout_marginBottom="32dp"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
 
+              />
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_cv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/Widget.App.CardView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_error"
                 app:layout_constraintStart_toStartOf="parent"
 
                >
@@ -31,15 +45,15 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="16dp"
+                   android:paddingTop="16dp"
                     android:layout_gravity="center">
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/user_email_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/Widget.App.TextInputLayout"
 
+                        style="@style/Widget.App.TextInputLayout"
                         app:layout_constraintTop_toTopOf="parent">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -49,6 +63,7 @@
                             android:hint="@string/email"
                             android:inputType="textEmailAddress"
                            style="@style/MyTextInputEditText"
+                            android:text="@={vm.userEmail}"
 
                             />
 
@@ -68,7 +83,10 @@
                             android:layout_height="wrap_content"
                             android:hint="@string/password"
                             android:inputType="textPassword"
-                            style="@style/MyTextInputEditText" />
+                            style="@style/MyTextInputEditText"
+                            android:text="@={vm.userPassword}"
+
+                            />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -107,7 +125,6 @@
                android:layout="@layout/progress_bar_layout"
                app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent"
                app:layout_constraintBottom_toBottomOf="parent"
                />
 

@@ -1,5 +1,17 @@
 <resources>
     <string name="app_name">Men\'s Fashion</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Email</string>
+    <string name="passward">passward</string>
+    <string name="login">login</string>
+    <string name="creat_new_account">Register</string>
+    <string name="not_registered_yet">not registered yet?</string>
+    <string name="shope_now">Shope now</string>
+    <string name="sign_up">sign up</string>
+    <string name="user_name">user name</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="forget">Forget Your Password?</string>
     <string name="home">Home</string>
     <string name="navigation">Navigation</string>
     <string name="favourite">Favourite</string>

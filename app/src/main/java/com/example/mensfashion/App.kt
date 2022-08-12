@@ -3,6 +3,7 @@ package com.example.mensfashion
 import android.app.Application
 import android.content.Context
 import android.util.Log
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.mensfashion.core.SecureSharedPreferences
 import timber.log.Timber
 
@@ -16,6 +17,9 @@ class App : Application() {
             // to just log when app is debug
             Timber.plant(Timber.DebugTree())
         }
+
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO) // prevent dark mode
     }
 
 

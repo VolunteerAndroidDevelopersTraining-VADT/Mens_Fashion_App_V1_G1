@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/splashFragment2">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -16,7 +16,7 @@
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_homeFragment_to_loginFragment2"
-            app:destination="@id/loginFragment2" />
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
@@ -39,31 +39,31 @@
         android:label="fragment_orders"
         tools:layout="@layout/fragment_orders" />
     <fragment
-        android:id="@+id/splashFragment2"
+        android:id="@+id/splashFragment"
         android:name="com.example.mensfashion.ui.splash.SplashFragment"
         android:label="SplashFragment" >
         <action
-            android:id="@+id/action_splashFragment2_to_loginFragment2"
-            app:destination="@id/loginFragment2"
-            app:popUpTo="@id/splashFragment2"
+            android:id="@+id/action_splashFragment_to_loginFragment2"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/splashFragment"
             app:popUpToInclusive="true" />
         <action
-            android:id="@+id/action_splashFragment2_to_homeFragment"
+            android:id="@+id/action_splashFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/loginFragment2"
+        android:id="@+id/loginFragment"
         android:name="com.example.mensfashion.ui.login.LoginFragment"
         android:label="LoginFragment" >
         <action
             android:id="@+id/action_loginFragment2_to_registerFragment2"
             app:destination="@id/registerFragment2"
-            app:popUpTo="@id/loginFragment2"
+            app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_loginFragment2_to_homeFragment"
             app:destination="@id/homeFragment"
-            app:popUpTo="@id/loginFragment2"
+            app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment

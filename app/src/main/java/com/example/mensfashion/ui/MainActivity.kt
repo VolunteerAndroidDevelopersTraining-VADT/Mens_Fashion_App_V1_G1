@@ -28,16 +28,13 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
 
             when (destination.id) {
-                R.id.splashFragment -> {
-                    //  actionBar?.hide()
-                    hideBottomNav()
-                }
-
-                R.id.loginFragment -> hideBottomNav()
+                R.id.splashFragment    -> hideBottomNav()
+                R.id.loginFragment     -> hideBottomNav()
+                R.id.registerFragment2 -> hideBottomNav()
                 else -> showBottomNav()
             }
         }
-//        binding.bottomNavigationView.setupWithNavController(navController)
+        binding.bottomNavigationView.setupWithNavController(navController)
 
 
     }
@@ -47,12 +44,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showBottomNav() {
-//        binding. bottomNavigationView.visibility = View.VISIBLE
+        binding.bottomNavigationView.visibility = View.VISIBLE
 
     }
 
     private fun hideBottomNav() {
-//        binding. bottomNavigationView.visibility= View.GONE
+        binding.bottomNavigationView.visibility = View.GONE
 
     }
 }

@@ -46,7 +46,7 @@ class RegisterViewModel() : ViewModel() {
                 _response.postValue(RegisterResult.InvalidResult(RegisterError.PasswordInvalid))
             }
             else -> {
-                // check exist user in repo
+                // check exist  or not and add new user in repo
                 _response.postValue(RegisterResult.RegisterSuccessful)
             }
 

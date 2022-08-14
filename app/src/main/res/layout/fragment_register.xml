@@ -3,7 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data />
+    <data
+
+        >
+        <variable
+            name="viewModel"
+            type="com.example.mensfashion.ui.register.RegisterViewModel" />
+    </data>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_color">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -61,6 +71,7 @@
                 android:hint="@string/user_name"
                 android:inputType="textPersonName"
                 android:lines="1"
+                android:text="@={viewModel.user_name}"
                 android:maxLines="1"
                 android:padding="12dp"
                 android:paddingHorizontal="12dp" />
@@ -88,6 +99,7 @@
                 android:inputType="textEmailAddress"
                 android:lines="1"
                 android:maxLines="1"
+                android:text="@={viewModel.user_email}"
                 android:padding="12dp"
                 android:paddingHorizontal="12dp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -111,13 +123,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/password"
+                android:text="@={viewModel.user_password}"
                 android:inputType="textPassword"
                 android:padding="12dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_register"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
@@ -143,7 +156,7 @@
             android:textSize="16sp"
             android:layout_marginEnd="@dimen/_12sdp"
             app:layout_constraintBottom_toBottomOf="@id/tv_login"
-            app:layout_constraintStart_toStartOf="@id/btn_login"
+            app:layout_constraintStart_toStartOf="@id/btn_register"
             app:layout_constraintTop_toTopOf="@id/tv_login" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -158,8 +171,19 @@
             android:textSize="18sp"
             app:textAllCaps="false"
             app:layout_constraintStart_toEndOf="@+id/tv_have_account"
-            app:layout_constraintTop_toBottomOf="@id/btn_login" />
+            app:layout_constraintTop_toBottomOf="@id/btn_register" />
 
-
+<ViewStub
+    android:id="@+id/progress_ViewStub"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout="@layout/progress_bar_layout"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/tv_have_account"
+    />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
 </layout>

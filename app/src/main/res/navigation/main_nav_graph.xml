@@ -76,4 +76,9 @@
             app:popUpTo="@id/registerFragment2"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.example.mensfashion.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
 </navigation>

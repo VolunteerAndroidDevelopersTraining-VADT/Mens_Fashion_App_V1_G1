@@ -29,6 +29,7 @@
             app:layout_constraintGuide_percent=".27" />
 
         <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/welcome_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"

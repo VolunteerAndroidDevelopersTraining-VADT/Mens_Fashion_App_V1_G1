@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.mensfashion.R
 import com.example.mensfashion.core.base.BaseFragment
 import com.example.mensfashion.core.translationXAnimation
+import com.example.mensfashion.core.translationXRightAnimation
 import com.example.mensfashion.databinding.FragmentRegisterBinding
 import com.example.mensfashion.ui.MainActivity
 
@@ -68,13 +69,14 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
    }
 
     private fun setUpViewAnimation() {
+        binding.welcomeText.translationXRightAnimation(200)
         binding.imgRegister.translationXAnimation(200)
         binding.layoutName.translationXAnimation(200)
         binding.layoutRegisterEmail.translationXAnimation(350)
         binding.layoutRegisterPass.translationXAnimation(550)
         binding.btnLogin.translationXAnimation(700)
         binding.tvHaveAccount.translationXAnimation(750)
-        binding.tvLogin.translationXAnimation(750)
+        binding.tvLogin.translationXAnimation(850)
 
     }
 

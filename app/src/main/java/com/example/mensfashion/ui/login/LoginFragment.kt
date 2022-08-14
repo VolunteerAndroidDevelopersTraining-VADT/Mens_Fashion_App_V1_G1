@@ -48,13 +48,13 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
 
     private fun setUpViewAnimation() {
         binding.imgLogin.translationYAnimation(200)
-
+        binding.welcomeText.translationXAnimation(200)
         binding.layoutEmail.translationXAnimation(200)
         binding.layoutPass.translationXAnimation(350)
         binding.forgetPassword.translationXAnimation(400)
         binding.btnLogin.translationXAnimation(550)
         binding.tvNot.translationXAnimation(600)
-        binding.tvSignup.translationXAnimation(600)
+        binding.tvSignup.translationXAnimation(700)
 
     }
 

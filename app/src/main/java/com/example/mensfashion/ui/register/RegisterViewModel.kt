@@ -11,18 +11,17 @@ import com.example.mensfashion.utils.isEmail
 import com.example.mensfashion.utils.isPassword
 
 class RegisterViewModel() : ViewModel() {
+    // which better observe or live data in binding
     var user_name = ObservableField<String>("")
     var user_email = ObservableField<String>("")
     var user_password = MutableLiveData<String>("")
+
     private val _response: MutableLiveData<RegisterResult> = MutableLiveData()
     val registerResponse: LiveData<RegisterResult> get() = _response
     fun register() {
         var name = user_name.get()?.trim() ?: ""
         var password = user_password.value?.trim() ?: ""
         var email = user_email.get()?.trim() ?: ""
-        Log.e(TAG, "register: ${name}", )
-        Log.e(TAG, "register: ${email}", )
-        Log.e(TAG, "register: ${password}", )
 
         when {
 

@@ -7,6 +7,7 @@ import com.example.mensfashion.R
 import com.example.mensfashion.core.base.BaseFragment
 import com.example.mensfashion.core.navigateTo
 import com.example.mensfashion.core.translationXAnimation
+import com.example.mensfashion.core.translationYAnimation
 import com.example.mensfashion.databinding.FragmentLoginBinding
 
 class LoginFragment : BaseFragment<FragmentLoginBinding>() {
@@ -46,6 +47,8 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
 
 
     private fun setUpViewAnimation() {
+        binding.imgLogin.translationYAnimation(200)
+
         binding.layoutEmail.translationXAnimation(200)
         binding.layoutPass.translationXAnimation(350)
         binding.forgetPassword.translationXAnimation(400)

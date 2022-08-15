@@ -53,7 +53,6 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
         registerViewModel.register()
         registerViewModel.registerResponseResult.observe(viewLifecycleOwner){
             it?.let {
-                registerViewModel.setLoading.set(false)
                 userRegister()
             }
 

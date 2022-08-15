@@ -52,9 +52,6 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
         registerViewModel.registerResponse.observe(viewLifecycleOwner){ result->
             hiddenLoading()
             when(result){
-                is RegisterViewModel.RegisterResult.InvalidResult->{
-                    invalidRegisterResult(result)
-                }
                 RegisterViewModel.RegisterResult.RegisterFailure -> {
                     registerFailed()
                 }
@@ -75,41 +72,6 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
         hiddenLoading()
 
     }
-
-    /**
-     * handle   all states of  invalid result
-     * when user try to register
-     */
-    private fun invalidRegisterResult(result: RegisterViewModel.RegisterResult.InvalidResult) {
-        hiddenLoading()
-        when (result.registerError) {
-            RegisterViewModel.RegisterError.EmptyName->{
-                binding.layoutName.error=getString(R.string.required)
-            }
-            RegisterViewModel.RegisterError.EmptyEmail -> {
-                binding.layoutRegisterEmail.error=getString(R.string.required)
-            }
-            RegisterViewModel.RegisterError.EmptyPassword-> {
-                binding.layoutRegisterPass.error=getString(R.string.required)
-            }
-            RegisterViewModel.RegisterError.EmailInvalid->{
-                binding.layoutRegisterEmail.error=getString(R.string.invalid_email)
-                binding.layoutRegisterEmail.boxStrokeColor=resources.getColor(R.color.red)
-
-
-            }
-            RegisterViewModel.RegisterError.PasswordInvalid->{
-                binding.layoutRegisterPass.error=getString(R.string.invalid_passsword)
-                binding.layoutRegisterPass.boxStrokeColor=resources.getColor(R.color.red)
-
-
-            }
-
-
-
-
-            }
-        }
 
 
     /**

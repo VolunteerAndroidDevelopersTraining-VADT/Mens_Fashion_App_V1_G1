@@ -7,19 +7,14 @@
         <entry key="app/src/main/res/drawable/btn_shape.xml" value="0.1315" />
         <entry key="app/src/main/res/drawable/circle.xml" value="0.184" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.179" />
-        <entry key="app/src/main/res/drawable/ic_visibility.xml" value="0.137" />
         <entry key="app/src/main/res/drawable/login_back.xml" value="0.1315" />
-        <entry key="app/src/main/res/drawable/register_background.xml" value="0.137" />
         <entry key="app/src/main/res/layout-sw600dp/fragment_splash.xml" value="0.20681265206812652" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/layout/fragment_details.xml" value="0.18229166666666666" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.17708333333333334" />
-        <entry key="app/src/main/res/layout/fragment_register.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_register.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/progress_bar_layout.xml" value="0.17708333333333334" />
-        <entry key="app/src/main/res/layout/yyy.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.17708333333333334" />
       </map>
     </option>

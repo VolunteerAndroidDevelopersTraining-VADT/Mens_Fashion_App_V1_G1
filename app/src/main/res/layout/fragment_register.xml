@@ -71,7 +71,7 @@
                 android:hint="@string/user_name"
                 android:inputType="textPersonName"
                 android:lines="1"
-                android:text="@={viewModel.user_name}"
+                android:text="@={viewModel.userName}"
                 android:maxLines="1"
                 android:padding="12dp"
                 android:paddingHorizontal="12dp" />
@@ -99,7 +99,7 @@
                 android:inputType="textEmailAddress"
                 android:lines="1"
                 android:maxLines="1"
-                android:text="@={viewModel.user_email}"
+                android:text="@={viewModel.userEmail}"
                 android:padding="12dp"
                 android:paddingHorizontal="12dp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -123,7 +123,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/password"
-                android:text="@={viewModel.user_password}"
+                android:text="@={viewModel.userPassword}"
                 android:inputType="textPassword"
                 android:padding="12dp" />
         </com.google.android.material.textfield.TextInputLayout>

@@ -17,4 +17,9 @@
     <string name="profile">Profile</string>
     <string name="shop_now">shop now</string>
     <string name="welcome_back">Welcome \nBack</string>
+    <string name="Register">register</string>
+    <string name="have_account">Have an account?</string>
+    <string name="required">required</string>
+    <string name="invalid_email">invalid email</string>
+    <string name="invalid_passsword">invalid password</string>
 </resources>

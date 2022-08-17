@@ -11,6 +11,9 @@
     <color name="dark_color">#22222E</color>
     <color name="orangy">#EF801E</color>
     <color name="darky">#222533</color>
+    <color name="red">#FF001E</color>
+
+
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#EF801E</color>
 
 </resources>

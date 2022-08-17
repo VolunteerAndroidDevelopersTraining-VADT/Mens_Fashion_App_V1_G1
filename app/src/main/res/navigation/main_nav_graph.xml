@@ -79,4 +79,9 @@
             android:id="@+id/action_registerFragment2_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.example.mensfashion.ui.notification.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
 </navigation>

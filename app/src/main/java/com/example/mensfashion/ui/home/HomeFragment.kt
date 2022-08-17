@@ -1,15 +1,10 @@
 package com.example.mensfashion.ui.home
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import androidx.activity.OnBackPressedCallback
-import androidx.navigation.fragment.findNavController
-import com.example.mensfashion.R
 import com.example.mensfashion.core.SecureSharedPreferences
 import com.example.mensfashion.core.base.BaseFragment
-import com.example.mensfashion.core.navigateTo
 import com.example.mensfashion.databinding.FragmentHomeBinding
+import com.example.mensfashion.utils.Constants
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
@@ -21,17 +16,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        SecureSharedPreferences.save(true, "loggedIn")
+        SecureSharedPreferences.save(true, Constants.IS_LOGIN)
 
 
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.btnSignOut.setOnClickListener {
-
-            SecureSharedPreferences.save(false, "loggedIn")
-            navigateTo(R.id.action_homeFragment_to_loginFragment2)
-        }
-    }
 }

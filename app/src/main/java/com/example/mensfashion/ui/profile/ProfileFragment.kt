@@ -1,26 +1,34 @@
 package com.example.mensfashion.ui.profile
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import com.example.mensfashion.R
+import com.example.mensfashion.core.SecureSharedPreferences
+import com.example.mensfashion.core.base.BaseFragment
+import com.example.mensfashion.core.navigateTo
+import com.example.mensfashion.databinding.FragmentProfileBinding
+import com.example.mensfashion.utils.Constants
 
 
-class ProfileFragment : Fragment() {
+class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
+
+    override fun setViewBinding(): FragmentProfileBinding =
+        FragmentProfileBinding.inflate(layoutInflater)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        SecureSharedPreferences.save(true, Constants.IS_LOGIN)
 
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.btnSignOut.setOnClickListener {
+            SecureSharedPreferences.save(false, Constants.IS_LOGIN)
+            navigateTo(R.id.action_homeFragment_to_loginFragment2)
+        }
+
     }
+
 
 }

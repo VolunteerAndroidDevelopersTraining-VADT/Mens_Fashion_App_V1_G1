@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="Widget.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="boxCornerRadiusBottomEnd">12dp</item>
@@ -39,6 +39,7 @@
         <item name="android:statusBarColor" >@color/orangy</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges</item>
 
     </style>
 </resources>

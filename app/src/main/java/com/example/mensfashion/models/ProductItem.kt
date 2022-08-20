@@ -1,6 +1,6 @@
 package com.example.mensfashion.models
 
-data class ProductDetailsItem(
+data class ProductItem(
     val category: Category = Category(),
     val color: List<Color> = listOf(),
     val out_of_stock: Boolean = false,

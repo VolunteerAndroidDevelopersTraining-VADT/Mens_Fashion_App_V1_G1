@@ -11,6 +11,8 @@ import com.example.mensfashion.R
 import com.example.mensfashion.core.base.BaseFragment
 import com.example.mensfashion.core.onclick
 import com.example.mensfashion.databinding.FragmentDetailsBinding
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
+import com.smarteist.autoimageslider.SliderAnimations
 
 
 class DetailsFragment : BaseFragment<FragmentDetailsBinding>(){
@@ -27,7 +29,13 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(){
 
         }
     }
-
+ private  fun initView(){
+//     val sliderAdapter = SliderAdapterProductDetails(product.images)
+//     binding.imageSliderProductDetailes.setSliderAdapter(_sliderAdapter)
+//     binding.imageSliderProductDetailes.setIndicatorAnimation(IndicatorAnimationType.WORM)
+//     binding.imageSliderProductDetailes.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION)
+//     binding.imageSliderProductDetailes.startAutoCycle()
+ }
 
 //    private fun addRadioButtons(number: Int) {
 //        binding.groubColor.orientation = LinearLayout.HORIZONTAL

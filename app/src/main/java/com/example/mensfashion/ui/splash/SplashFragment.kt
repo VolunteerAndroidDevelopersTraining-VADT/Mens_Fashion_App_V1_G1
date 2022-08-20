@@ -84,8 +84,8 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>() {
     }
 
 
-    override fun onDetach() {
-        super.onDetach()
+    override fun onDestroyView() {
+        super.onDestroyView()
         showSystemUI()
     }
 

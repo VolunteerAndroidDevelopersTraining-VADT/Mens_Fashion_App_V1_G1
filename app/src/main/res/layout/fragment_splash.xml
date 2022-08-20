@@ -7,15 +7,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/orangy">
+        android:background="@color/darky">
 
-        <com.google.android.material.imageview.ShapeableImageView
+        <com.airbnb.lottie.LottieAnimationView
+            android:minHeight="256dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/splash"
-            android:scaleX="1.2"
-            android:scaleY="1.2"
-            android:scaleType="centerCrop" />
+            android:layout_height="wrap_content"
+            app:lottie_rawRes="@raw/logo"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
 
 
         <com.google.android.material.button.MaterialButton
@@ -26,7 +28,6 @@
             android:layout_marginBottom="@dimen/_64sdp"
             android:backgroundTint="#FF9100"
             android:drawableEnd="@drawable/ic_left_arrow"
-
             android:fontFamily="monospace"
             android:padding="@dimen/_16sdp"
             android:text="@string/shop_now"

@@ -57,4 +57,7 @@ dependencies {
     // debug logger
     implementation 'com.jakewharton.timber:timber:5.0.1'
 
+    // animation lib
+    def lottieVersion = "3.4.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 }

@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsControllerCompat
 import com.example.mensfashion.R
 import com.example.mensfashion.core.base.BaseFragment
 import com.example.mensfashion.core.navigateTo
+import com.example.mensfashion.core.translationYAnimation
 import com.example.mensfashion.databinding.FragmentSplashBinding
 import com.example.mensfashion.utils.Constants
 import timber.log.Timber
@@ -30,8 +31,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>() {
             }
         }
         hideSystemUI()
-
-
+        binding.btnLogin.translationYAnimation(700, 100f)
     }
 
 

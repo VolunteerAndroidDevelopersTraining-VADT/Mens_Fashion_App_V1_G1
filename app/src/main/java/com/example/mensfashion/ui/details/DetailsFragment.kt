@@ -11,6 +11,8 @@ import com.example.mensfashion.R
 import com.example.mensfashion.core.base.BaseFragment
 import com.example.mensfashion.core.onclick
 import com.example.mensfashion.databinding.FragmentDetailsBinding
+import com.example.mensfashion.models.Product
+import com.example.mensfashion.models.ProductItem
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
 import com.smarteist.autoimageslider.SliderAnimations
 
@@ -24,37 +26,20 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initView()
         binding.recyclerViewColor.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
         }
     }
- private  fun initView(){
-//     val sliderAdapter = SliderAdapterProductDetails(product.images)
-//     binding.imageSliderProductDetailes.setSliderAdapter(_sliderAdapter)
-//     binding.imageSliderProductDetailes.setIndicatorAnimation(IndicatorAnimationType.WORM)
-//     binding.imageSliderProductDetailes.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION)
-//     binding.imageSliderProductDetailes.startAutoCycle()
+ private  fun initView(product:ProductItem){
+     val sliderAdapter = SliderAdapterProductDetails(product.product_images)
+     binding.productImage.setSliderAdapter(sliderAdapter)
+     binding.productImage.setIndicatorAnimation(IndicatorAnimationType.WORM)
+     binding.productImage.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION)
+     binding.productImage.startAutoCycle()
  }
 
-//    private fun addRadioButtons(number: Int) {
-//        binding.groubColor.orientation = LinearLayout.HORIZONTAL
-//
-//        for (i in 1..number) {
-//            val rdbtn = RadioButton(requireContext())
-//            rdbtn.id=View.generateViewId()
-//            rdbtn.text="Radio ${ rdbtn.id}"
-//            rdbtn.backgroundTintMode=context.getColor(R.color.orangy)
-//
-//
-//                binding.groubColor.addView(rdbtn)
-//            }
-//        }
-
-
-//    private fun onColorSelect(v:Int) {
-//       print("selected")
-//    }
 
 
     override fun setViewBinding(): FragmentDetailsBinding = FragmentDetailsBinding.inflate(layoutInflater)

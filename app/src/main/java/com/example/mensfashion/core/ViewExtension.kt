@@ -1,6 +1,8 @@
 package com.example.mensfashion.core
 
 import android.view.View
+import android.widget.ImageView
+import com.bumptech.glide.Glide
 
 class ViewExtension {
 }
@@ -12,7 +14,12 @@ infix fun View.onclick(onClick: () -> Unit) {
     }
 }
 
-
+fun ImageView.loadImage(view:View, imageView: ImageView, scr:String){
+    Glide.with(view)
+        .load(scr)
+        .fitCenter()
+        .into(imageView);
+}
 
 
 fun View.translationXAnimation(startDelay: Long) {

@@ -23,7 +23,7 @@ class SliderAdapterProductDetails (private var images: List<String>) : SliderVie
         //using coil
         holder.binding.imageViewDetailes.load(itemImage)
         //using Glide extension function
-//        holder.binding.imageViewDetailes.loadImage(holder.itemView,holder.binding.imageViewDetailes,itemImage)
+       holder.binding.imageViewDetailes.loadImage(holder.itemView,holder.binding.imageViewDetailes,itemImage)
 
     }
 

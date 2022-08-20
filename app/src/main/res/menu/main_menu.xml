@@ -3,25 +3,25 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/home_fragment"
+        android:id="@+id/homeFragment"
         android:title="@string/home"
         android:icon="@drawable/ic_outline_home"
 
         />
     <item
-        android:id="@+id/navigation_fragment"
+        android:id="@+id/notificationFragment"
         android:title="@string/navigation"
         android:icon="@drawable/ic_notifications_24"
 
         />
     <item
-        android:id="@+id/favourite_fragment"
+        android:id="@+id/favoritesFragment"
         android:title="@string/favourite"
         android:icon="@drawable/ic_outline_favorite_border_24"
 
         />
     <item
-        android:id="@+id/profile_fragment"
+        android:id="@+id/profileFragment"
         android:title="@string/profile"
         android:icon="@drawable/ic__person_24"
 

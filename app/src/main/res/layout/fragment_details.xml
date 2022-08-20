@@ -1,14 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.details.DetailsFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".ui.details.DetailsFragment"
+        android:background="@color/white">
 
-</FrameLayout>
+
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/product_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHeight_percent=".40"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="0"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="15dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="3dp"
+            app:sliderIndicatorRadius="2dp"
+            app:sliderIndicatorSelectedColor="#5A5A5A"
+            app:sliderIndicatorUnselectedColor="#989393"
+            app:sliderScrollTimeInSec="2"
+            android:animateLayoutChanges="true"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_fav"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:src="@drawable/ic_favorite_border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/ic_back"
+            />
+         <androidx.core.widget.NestedScrollView
+             android:layout_width="match_parent"
+             android:layout_height="0dp"
+             app:layout_constraintHeight_percent=".65"
+             app:layout_constraintVertical_bias="1"
+             app:layout_constraintTop_toTopOf="parent"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             android:background="@drawable/oval_shap"
+             >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent=".65"
+            app:layout_constraintVertical_bias="1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/oval_shap"
+
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="@dimen/_32sdp"
+                android:text="woolem coat"
+                android:textSize="@dimen/_16sdp"
+                android:textColor="@color/black"
+                app:textAllCaps="false"
+                android:textStyle="bold"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/product_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_margin="@dimen/_32sdp"
+                android:text="450 $"
+                android:textSize="@dimen/_16sdp"
+                android:textColor="@color/orangy"
+                app:textAllCaps="false"
+                android:textStyle="bold"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/product_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/product_name"
+                app:layout_constraintStart_toStartOf="parent"
+                android:gravity="start"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_margin="@dimen/_32sdp"
+                android:textSize="@dimen/_16sdp"
+                android:text="description--description--description--description--description--description--description--description--description--description--description--description--description--description--description--"
+                app:textAllCaps="false"
+                android:textStyle="normal"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_product_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/product_description"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="@dimen/_32sdp"
+                android:text="@string/color"
+                android:textSize="@dimen/_16sdp"
+                app:textAllCaps="false"
+                android:textStyle="normal"
+
+                />
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recyclerView_color"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+     app:layout_constraintTop_toBottomOf="@id/tv_product_color"
+      app:layout_constraintStart_toStartOf="@id/tv_product_color"
+       android:orientation="horizontal"
+    android:layout_marginEnd="@dimen/_16sdp"
+    android:layout_marginStart="@dimen/_16sdp"
+        tools:listitem="@layout/color_item"
+
+
+    />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_product_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/recyclerView_color"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="@dimen/_32sdp"
+                android:text="@string/your_size"
+                android:textSize="@dimen/_16sdp"
+                app:textAllCaps="false"
+                android:textStyle="normal"
+
+                />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/tv_product_size"
+                app:layout_constraintStart_toStartOf="@id/tv_product_color"
+                android:orientation="horizontal"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                tools:listitem="@layout/color_item"
+
+
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+         </androidx.core.widget.NestedScrollView>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_add_cart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="72dp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:backgroundTint="#FF9100"
+            android:drawableEnd="@drawable/ic_add_cart"
+            android:padding="@dimen/_16sdp"
+            android:text="@string/add_to_cart"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_18sdp"
+            app:cornerRadius="@dimen/_16sdp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

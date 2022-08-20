@@ -22,4 +22,7 @@
     <string name="required">required</string>
     <string name="invalid_email">invalid email</string>
     <string name="invalid_passsword">invalid password</string>
+    <string name="color">color</string>
+    <string name="your_size">your size</string>
+    <string name="add_to_cart">add to cart</string>
 </resources>

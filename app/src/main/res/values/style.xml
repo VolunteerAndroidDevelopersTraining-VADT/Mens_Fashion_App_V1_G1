@@ -31,12 +31,12 @@
 
     <!-- THIS IS THE MAIN THEME -->
     <style name="AppTheme" parent="@style/Theme.MaterialComponents.Light.NoActionBar">
-        <item name="android:windowBackground">@color/orangy</item>
+        <item name="android:windowBackground">@color/darky</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowLightStatusBar" >false</item>
         <item name="android:windowTranslucentNavigation" >true</item>
-        <item name="android:statusBarColor" >@color/orangy</item>
+        <item name="android:statusBarColor" >@color/darky</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
         <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges</item>

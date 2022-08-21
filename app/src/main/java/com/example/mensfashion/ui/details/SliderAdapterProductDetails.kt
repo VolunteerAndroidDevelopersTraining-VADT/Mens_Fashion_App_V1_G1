@@ -21,7 +21,7 @@ class SliderAdapterProductDetails (private var images: List<String>) : SliderVie
     override fun onBindViewHolder(holder: SliderHolder, position: Int) {
         val itemImage=images[position]
         //using coil
-        holder.binding.imageViewDetailes.load(itemImage)
+        //holder.binding.imageViewDetailes.load(itemImage)
         //using Glide extension function
        holder.binding.imageViewDetailes.loadImage(holder.itemView,holder.binding.imageViewDetailes,itemImage)
 

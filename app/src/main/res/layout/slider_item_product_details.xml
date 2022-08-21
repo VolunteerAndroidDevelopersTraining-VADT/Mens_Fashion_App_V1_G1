@@ -13,6 +13,8 @@
             android:id="@+id/image_view_detailes"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:src="@drawable/splash_1"
+            android:scaleType="centerCrop"
             android:adjustViewBounds="true" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

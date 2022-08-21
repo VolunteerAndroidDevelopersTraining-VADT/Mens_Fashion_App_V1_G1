@@ -3,6 +3,7 @@ package com.example.mensfashion.core
 import android.view.View
 import android.widget.ImageView
 import com.bumptech.glide.Glide
+import com.example.mensfashion.R
 
 class ViewExtension {
 }
@@ -17,8 +18,8 @@ infix fun View.onclick(onClick: () -> Unit) {
 fun ImageView.loadImage(view:View, imageView: ImageView, scr:String){
     Glide.with(view)
         .load(scr)
-        .fitCenter()
-        .into(imageView);
+        .fitCenter().placeholder(R.drawable.splash_1)
+        .into(imageView)
 }
 
 

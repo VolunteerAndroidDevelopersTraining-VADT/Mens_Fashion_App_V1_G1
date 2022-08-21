@@ -58,7 +58,6 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:5.0.1'
 
     // slider
-    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
     implementation 'com.github.smarteist:autoimageslider:1.4.0'
    //Glide
     implementation 'com.github.bumptech.glide:glide:4.13.0'

@@ -21,9 +21,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         navController = findNavController(R.id.fragmentContainerView2)
         actionBar?.hide()
-        window?.decorView?.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
-        window.statusBarColor = ContextCompat.getColor(this, R.color.orangy)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
 

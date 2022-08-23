@@ -2,13 +2,26 @@ package com.example.mensfashion
 
 import android.app.Application
 import android.content.Context
-import android.util.Log
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.hilt.work.HiltWorkerFactory
+import androidx.lifecycle.ViewModelStore
+import androidx.lifecycle.ViewModelStoreOwner
+import androidx.work.Configuration
 import com.example.mensfashion.core.SecureSharedPreferences
+import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
+import javax.inject.Inject
 
+@HiltAndroidApp
+class App : Application() , ViewModelStoreOwner, Configuration.Provider {
+    @Inject
+    lateinit var workerFactory: HiltWorkerFactory
+    override fun getWorkManagerConfiguration() = Configuration.Builder()
+        .setWorkerFactory(workerFactory)
+        .setMinimumLoggingLevel(android.util.Log.DEBUG)
+        .build()
+    override fun getViewModelStore() = appViewModelStore
 
-class App : Application() {
     val OFFLINE = true
     override fun onCreate() {
         super.onCreate()
@@ -25,7 +38,11 @@ class App : Application() {
 
 
     companion object {
-        val OFFLINE = true
+        private val appViewModelStore: ViewModelStore by lazy {
+            ViewModelStore()
+        }
+
+        const val OFFLINE = true
         private var instance: App? = null
         lateinit var pref: SecureSharedPreferences
         fun applicationContext(): Context {
@@ -34,4 +51,6 @@ class App : Application() {
 
 
     }
+
+
 }

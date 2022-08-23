@@ -61,7 +61,7 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:5.0.1'
 
     // animation lib
-    def lottieVersion = "3.4.0"
+    def lottieVersion = "3.5.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"
 
     // Hilt
@@ -73,6 +73,9 @@ dependencies {
     compileOnly "com.squareup.inject:assisted-inject-annotations-dagger2:0.8.1"
     kapt "com.squareup.inject:assisted-inject-processor-dagger2:0.8.1"
     implementation 'androidx.hilt:hilt-work:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    implementation "androidx.core:core-ktx:1.8.0"
 
     //NETWORK
     implementation "com.google.code.gson:gson:2.9.0"

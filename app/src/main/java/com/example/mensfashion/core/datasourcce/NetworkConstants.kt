@@ -14,6 +14,7 @@ object NetworkConstants {
     const val TOKEN_OF_APIS = "TOKEN_OF_APIS"
 
 
-
+    const val LIST_OF_FAVORITES = ""
+    const val REMOVE_ITEM_FROM_LIST_OF_FAVORITES = ""
 
 }

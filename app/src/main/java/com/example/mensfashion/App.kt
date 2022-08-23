@@ -9,6 +9,7 @@ import timber.log.Timber
 
 
 class App : Application() {
+    val OFFLINE = true
     override fun onCreate() {
         super.onCreate()
         instance = this
@@ -24,6 +25,7 @@ class App : Application() {
 
 
     companion object {
+        val OFFLINE = true
         private var instance: App? = null
         lateinit var pref: SecureSharedPreferences
         fun applicationContext(): Context {

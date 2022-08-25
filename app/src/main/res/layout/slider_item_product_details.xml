@@ -15,7 +15,10 @@
             android:layout_height="match_parent"
             android:src="@drawable/splash_1"
             android:scaleType="centerCrop"
-            android:adjustViewBounds="true" />
+            android:adjustViewBounds="true"
+            android:padding="@dimen/_32sdp"
+
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

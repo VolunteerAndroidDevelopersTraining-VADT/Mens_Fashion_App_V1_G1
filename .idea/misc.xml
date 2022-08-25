@@ -14,10 +14,13 @@
         <entry key="app/src/main/res/drawable/ic_visibility_off.xml" value="0.137" />
         <entry key="app/src/main/res/drawable/login_back.xml" value="0.1315" />
         <entry key="app/src/main/res/drawable/oval_shap.xml" value="0.137" />
+        <entry key="app/src/main/res/drawable/shap_back.xml" value="0.137" />
+        <entry key="app/src/main/res/drawable/shdow_shap.xml" value="0.137" />
         <entry key="app/src/main/res/layout-sw600dp/fragment_splash.xml" value="0.20681265206812652" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/layout/color_item.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/layout/content.xml" value="0.17708333333333334" />
+        <entry key="app/src/main/res/layout/d3d3.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/layout/ffff.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/layout/fragment_details.xml" value="0.15" />
         <entry key="app/src/main/res/layout/fragment_favorites.xml" value="0.17708333333333334" />

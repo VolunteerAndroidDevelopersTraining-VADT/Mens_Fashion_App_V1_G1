@@ -4,6 +4,7 @@ import android.content.ContentValues.TAG
 import android.graphics.PorterDuff
 import android.os.Bundle
 import android.util.Log
+import android.view.MotionEvent
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.RadioButton
@@ -25,7 +26,9 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -44,9 +47,12 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(){
      binding.productImage.setIndicatorAnimation(IndicatorAnimationType.WORM)
      binding.productImage.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION)
      binding.productImage.startAutoCycle()
-     binding.contentDetails.productDescription.text=product.product_description
-    binding.contentDetails.productName.text=product.product_name
-     binding.contentDetails.productPrice.text=product.price.new_price.toString()
+//     binding.contentDetails.productDescription.text=product.product_description
+//    binding.contentDetails.productName.text=product.product_name
+//     binding.contentDetails.productPrice.text=product.price.new_price.toString()
+          binding.productPrice.text=product.price.new_price.toString()
+          binding.productDescription.text=product.product_description
+       binding.productName.text=product.product_name
 
  }
 

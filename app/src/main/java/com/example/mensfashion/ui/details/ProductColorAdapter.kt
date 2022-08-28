@@ -16,16 +16,11 @@ class ProductColorAdapter : BaseRecyclerAdapter<Any>() {
         LayoutInflater.from(parent.context),parent,false)
 
     override fun bind(binding: ViewDataBinding, position: Int) {
-        val item =currentList[position] as Color
+        val item = currentList[position] as Color
         binding as ColorItemBinding
         binding.colorShape.setBackgroundColor(item.color_value.toInt())
-        binding.colorShape.onclick {
-              onItemClick(Any(),9,0)
 
-           }
-
-        }
-
+    }
 
 
     class ProductViewHolder(binding: ColorItemBinding) :BaseViewHolder<ColorItemBinding>(binding){}

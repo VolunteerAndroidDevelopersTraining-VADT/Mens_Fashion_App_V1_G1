@@ -105,7 +105,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             android:src="@drawable/ic_back"
                             android:gravity="start"
-                            android:onClick="@{()->vm.onBackClick()}"
+                            android:onClick="@{()->vm.onFavouriteClick()}"
                             android:background="@android:color/transparent"
                             android:tint="@color/black"
                             />
@@ -265,6 +265,7 @@
             android:textSize="@dimen/_18sdp"
             app:cornerRadius="@dimen/_16sdp"
             android:textStyle="bold"
+            android:onClick="@{()->vm.addToCart()}"
             android:layout_gravity="bottom|center_horizontal"
 
             />

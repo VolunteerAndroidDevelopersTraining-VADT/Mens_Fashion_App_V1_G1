@@ -105,6 +105,9 @@ class DetailsViewModel @Inject constructor(application: Application):BaseViewMod
       }
 
   }
+    fun addToCart(){
+
+    }
    fun onFavouriteClick(){
        Log.e(TAG, "onFavouriteClick: ", )
    }

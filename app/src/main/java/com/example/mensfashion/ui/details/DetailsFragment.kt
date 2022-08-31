@@ -72,6 +72,8 @@ class DetailsFragment : BaseFragment<FragmentDetailsBinding>(){
 
 
 
+
+
  }
 
 

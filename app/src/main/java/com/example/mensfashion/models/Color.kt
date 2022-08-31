@@ -5,5 +5,6 @@ data class Color(
     val color_name: String = "",
     val color_value: String = "",
     val quantity: Int = 0,
-    val sizes: List<Size> = listOf()
+    val sizes: List<Size> = listOf(),
+    var isSelected: Boolean =false
 )

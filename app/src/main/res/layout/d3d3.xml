@@ -4,19 +4,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="vm"
+            type="com.example.mensfashion.ui.details.DetailsViewModel" />
+        <import type="android.view.View"/>
     </data>
 
 
     <androidx.constraintlayout.motion.widget.MotionLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        android:elevation="@dimen/_8sdp"
 
 
-        app:layoutDescription="@xml/d3d3_xml_constraintlayout_scene"
+        app:layoutDescription="@xml/fragment_details_xml_constraintlayout2_scene"
         tools:context=".ui.details.DetailsFragment">
 
 
@@ -68,24 +70,15 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="0dp"-->
-        <!--            android:layout_marginStart="@dimen/_8sdp"-->
-        <!--            android:layout_marginEnd="@dimen/_8sdp"-->
-        <!--            android:background="@drawable/oval_shap"-->
-        <!--            android:elevation="2dp"-->
-        <!--            android:layout_marginTop="220dp"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toTopOf="parent"-->
-        <!--            >-->
+
         <androidx.core.widget.NestedScrollView
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="200dp"
-            android:layoutDirection="inherit"
+            android:background="@drawable/oval_shap"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -93,11 +86,9 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:layout_marginEnd="@dimen/_8sdp"
+
                 android:background="@drawable/oval_shap"
                 android:elevation="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
 
                 >
 
@@ -106,7 +97,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_32sdp"
-                    android:text="woolem coat"
+                    android:text="@={vm.productName}"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_16sdp"
                     android:textStyle="bold"
@@ -121,7 +112,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_32sdp"
-                    android:text="450 $"
+                    android:text="@={vm.productPrice}"
                     android:textColor="@color/orangy"
                     android:textSize="@dimen/_16sdp"
                     android:textStyle="bold"
@@ -132,17 +123,30 @@
                     />
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_product_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_32sdp"
+                    android:text="@string/description"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="normal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/product_name"
+                    app:textAllCaps="false"
+
+                    />
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/product_description"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_32sdp"
                     android:gravity="start"
-                    android:text="description--description--description--description--description--description--description--description--description--description--description--description--description--description--description--"
+                    android:text="@={vm.productDescription}"
                     android:textSize="@dimen/_16sdp"
                     android:textStyle="normal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/product_name"
+                    app:layout_constraintTop_toBottomOf="@id/tv_product_des"
                     app:textAllCaps="false"
 
                     />
@@ -153,6 +157,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_32sdp"
                     android:text="@string/color"
+                    android:visibility="@{vm.coloTextVisibility?View.VISIBLE:View.GONE}"
+
                     android:textSize="@dimen/_16sdp"
                     android:textStyle="normal"
                     app:layout_constraintStart_toStartOf="parent"
@@ -168,7 +174,7 @@
                     android:layout_marginStart="@dimen/_16sdp"
                     android:layout_marginEnd="@dimen/_16sdp"
                     android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    android:visibility="@{vm.colorVisibility?View.VISIBLE:View.GONE}"
                     app:layout_constraintStart_toStartOf="@id/tv_product_color"
                     app:layout_constraintTop_toBottomOf="@id/tv_product_color"
                     tools:listitem="@layout/color_item"
@@ -180,11 +186,12 @@
                     android:id="@+id/tv_product_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_32sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
                     android:text="@string/your_size"
                     android:textSize="@dimen/_16sdp"
+                    android:visibility="@{vm.sizeTextVisibility?View.VISIBLE:View.GONE}"
                     android:textStyle="normal"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tv_product_color"
                     app:layout_constraintTop_toBottomOf="@id/recyclerView_color"
                     app:textAllCaps="false"
 
@@ -194,10 +201,10 @@
                     android:id="@+id/recyclerView_size"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_16sdp"
-                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:layout_margin="@dimen/_16sdp"
+
                     android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    android:visibility="@{vm.sizeVisibility?View.VISIBLE:View.GONE}"
                     app:layout_constraintStart_toStartOf="@id/tv_product_color"
                     app:layout_constraintTop_toBottomOf="@id/tv_product_size"
                     tools:listitem="@layout/color_item"
@@ -209,7 +216,6 @@
 
         </androidx.core.widget.NestedScrollView>
 
-        <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_add_cart"

@@ -20,7 +20,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/layout/color_item.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/layout/content.xml" value="0.17708333333333334" />
-        <entry key="app/src/main/res/layout/d3d3.xml" value="0.17708333333333334" />
+        <entry key="app/src/main/res/layout/d3d3.xml" value="0.1" />
         <entry key="app/src/main/res/layout/ffff.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/layout/fragment_details.xml" value="0.15" />
         <entry key="app/src/main/res/layout/fragment_favorites.xml" value="0.17708333333333334" />
@@ -28,6 +28,7 @@
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_register.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/item_size.xml" value="0.5149700598802395" />
         <entry key="app/src/main/res/layout/slider_item_product_details.xml" value="0.17708333333333334" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.17708333333333334" />
       </map>

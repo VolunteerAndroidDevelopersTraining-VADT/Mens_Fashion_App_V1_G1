@@ -42,4 +42,12 @@
         <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges</item>
 
     </style>
+
+
+        <style name="MyFabStyle" parent="Widget.MaterialComponents.FloatingActionButton">
+            <item name="backgroundTint">@color/orangy</item>
+            <item name="rippleColor">#F3F4F4</item>
+
+        </style>
+
 </resources>

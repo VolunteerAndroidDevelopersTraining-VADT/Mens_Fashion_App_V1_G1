@@ -18,7 +18,7 @@ infix fun View.onclick(onClick: () -> Unit) {
 fun ImageView.loadImage(view:View, imageView: ImageView, scr:String){
     Glide.with(view)
         .load(scr)
-        .fitCenter().placeholder(R.drawable.splash_1)
+        .fitCenter()
         .into(imageView)
 }
 

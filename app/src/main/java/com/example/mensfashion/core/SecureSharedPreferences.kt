@@ -1,22 +1,16 @@
 package com.example.mensfashion.core
 
-import android.R.attr.password
 import android.content.Context
 import android.content.SharedPreferences
-import android.util.Log
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
 import com.google.gson.GsonBuilder
-import java.io.UnsupportedEncodingException
-import java.lang.StringBuilder
-import java.security.InvalidAlgorithmParameterException
-import java.security.InvalidKeyException
+import timber.log.Timber
 import java.security.NoSuchAlgorithmException
 import java.security.spec.InvalidKeySpecException
-import java.security.spec.InvalidParameterSpecException
-import javax.crypto.*
+import javax.crypto.Cipher
+import javax.crypto.SecretKey
 import javax.crypto.spec.SecretKeySpec
-import kotlin.Boolean as Boolean
 
 private const val PREFERENCES_FILE_NAME = "PREFERENCES_FILE_NAME"
 
@@ -25,7 +19,7 @@ private const val PREFERENCES_SECRET_KEY = "BVFDH6UROEN0JD898D1VTWWEHDR4GJ6S"
 
 object SecureSharedPreferences {
 
-     lateinit var preferences: SharedPreferences
+    lateinit var preferences: SharedPreferences
     private lateinit var refrance: SecureSharedPreferences
 
     fun initPreferences(context: Context): SecureSharedPreferences {
@@ -62,15 +56,15 @@ object SecureSharedPreferences {
     }
 
 
-    public fun ByteArray.decryptMsg(secret: SecretKey?): String {
+     fun ByteArray.decryptMsg(secret: SecretKey?): String {
         return try {
             /* Decrypt the message, given derived encContentValues and initialization vector. */
-            var cipher: Cipher? = null
+            val cipher: Cipher?
             cipher = Cipher.getInstance("AES/ECB/PKCS5Padding")
             cipher.init(Cipher.DECRYPT_MODE, secret)
             String(cipher.doFinal(this), charset("UTF-8"))
         } catch (e: Throwable) {
-            Log.e("Empty", "$e")
+            Timber.e("Empty", "$e")
 
             this.toString()
         }
@@ -120,7 +114,7 @@ object SecureSharedPreferences {
         //JSON String was found which means object can be read.
         //We convert this JSON String to model object. Parameter "c" (of
         //type Class < T >" is used to cast.
-        Log.e("Type=", T::class.java.simpleName)
+        Timber.e("Type= ${T::class.java.simpleName}")
         return if (value == "empty") {
             returnDefaultForEmptyValues()
         } else {
@@ -136,7 +130,6 @@ object SecureSharedPreferences {
         for (i in arr) {
             if (i.isNotEmpty()) {
                 byteArray.add(i.toByte())
-                Log.e("Empty", "${i.toByte()}")
             }
         }
         return byteArray.toByteArray()

@@ -26,6 +26,7 @@ class App : Application() , ViewModelStoreOwner, Configuration.Provider {
     override fun onCreate() {
         super.onCreate()
         instance = this
+        initTimber()
         pref = SecureSharedPreferences.initPreferences(this)
         if (BuildConfig.DEBUG) {
             // to just log when app is debug
@@ -36,6 +37,9 @@ class App : Application() , ViewModelStoreOwner, Configuration.Provider {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO) // prevent dark mode
     }
 
+    private fun initTimber() {
+        Timber.plant(Timber.DebugTree())
+    }
 
     companion object {
         private val appViewModelStore: ViewModelStore by lazy {

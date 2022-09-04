@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data
+
+        >
+
+        <variable
+            name="viewModel"
+            type="com.example.mensfashion.ui.register.RegisterViewModel" />
+    <import type="android.view.View"/>
+
+    </data>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_color">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dark_color"
+        tools:context=".ui.login.LoginFragment">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_register"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/register_background"
+            app:layout_constraintBottom_toTopOf="@id/register_h_g1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/register_h_g1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".27" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/welcome_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:layout_marginEnd="@dimen/_32sdp"
+            android:text="@string/welcome_back"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintBottom_toTopOf="@id/register_h_g1"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_32sdp"
+            android:layout_marginTop="@dimen/_32sdp"
+            app:endIconDrawable="@drawable/ic_person"
+            app:endIconMode="custom"
+            app:endIconTint="@color/orangy"
+            app:hintEnabled="false"
+            app:Error = "@{viewModel.userNameError}"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_register">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/user_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/user_name"
+                android:inputType="textPersonName"
+                android:lines="1"
+                android:text="@={viewModel.userName}"
+                android:maxLines="1"
+                android:padding="12dp"
+                android:paddingHorizontal="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_register_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_32sdp"
+            android:layout_marginTop="@dimen/_32sdp"
+            app:endIconDrawable="@drawable/ic_email"
+            app:endIconMode="custom"
+            app:endIconTint="@color/orangy"
+            app:hintEnabled="false"
+            app:Error = "@{viewModel.userNameError}"
+
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_register_email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@={viewModel.userEmail}"
+                android:padding="12dp"
+                android:paddingHorizontal="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_register_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="@dimen/_32sdp"
+            app:endIconTint="@color/orangy"
+            app:hintEnabled="false"
+            android:minHeight="48dp"
+            app:Error = "@{viewModel.userNameError}"
+            app:layout_constraintStart_toStartOf="@+id/layout_register_email"
+            app:layout_constraintTop_toBottomOf="@+id/layout_register_email"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/orangy">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/regster_passward"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/password"
+                android:text="@={viewModel.userPassword}"
+                android:inputType="textPassword"
+                android:padding="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_register"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="48dp"
+            android:backgroundTint="@color/orangy"
+            android:fontFamily="monospace"
+            android:padding="@dimen/_16sdp"
+            android:text="@string/Register"
+            android:textAllCaps="true"
+            android:textSize="@dimen/_18sdp"
+            app:cornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="@id/layout_register_pass"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_register_pass" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_have_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:text="@string/have_account"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_login"
+            app:layout_constraintStart_toStartOf="@id/btn_register"
+            app:layout_constraintTop_toTopOf="@id/tv_login" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/login"
+            android:textAllCaps="true"
+            android:textColor="@color/orangy"
+            android:textSize="18sp"
+            app:textAllCaps="false"
+            app:layout_constraintStart_toEndOf="@+id/tv_have_account"
+            app:layout_constraintTop_toBottomOf="@id/btn_register" />
+
+<ViewStub
+    android:id="@+id/progress_ViewStub"
+    android:layout_width="wrap_content"
+    android:visibility="@{viewModel.setLoading?View.VISIBLE:View.GONE}"
+    android:layout_height="wrap_content"
+    android:layout="@layout/progress_bar_layout"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/tv_have_account"
+    />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+</layout>

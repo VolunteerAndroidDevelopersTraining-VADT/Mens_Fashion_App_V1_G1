@@ -1,5 +1,6 @@
 package com.example.mensfashion.favorite.presentation
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mensfashion.core.UiEvents
@@ -8,6 +9,7 @@ import com.example.mensfashion.favorite.domain.repository.FavoriteRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
+import java.lang.Exception
 import javax.inject.Inject
 
 
@@ -42,7 +44,7 @@ class FavoriteViewModel @Inject constructor(
 
     fun deleteAllFavorite() {
         viewModelScope.launch {
-            if (favoriteItems.count() == 0) {
+            if (favoriteItems.firstOrNull() == null) {
                 _eventFlow.emit(
                     UiEvents.SnackbarEvent(message = "No Favorite items found")
                 )

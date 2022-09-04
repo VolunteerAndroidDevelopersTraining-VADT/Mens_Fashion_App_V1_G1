@@ -1,11 +1,15 @@
 package com.example.mensfashion.favorite.data.remote
 
+import android.util.Log
 import com.example.mensfashion.favorite.data.mapper.toDomain
 import com.example.mensfashion.favorite.data.remote.dto.FavoriteDto
 import com.example.mensfashion.favorite.data.remote.dto.RatingDto
 import com.example.mensfashion.favorite.domain.model.Favorite
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.launch
 
 /*
 * This file will contain Retrofit service,
@@ -27,18 +31,19 @@ class FavoriteService {
         )
     )
 
+    private val favFlow = MutableStateFlow<List<Favorite>> (
+        favorites.map {
+                it.toDomain()
+            }.toList()
+    )
+
     fun insertToFavorite(favortieItem: FavoriteDto) {
         favorites.add(favortieItem)
+        temporaryEmit() // todo delete after retrofit code is ready
     }
 
     fun getFavorite(): Flow<List<Favorite>> {
-        return flow {
-            emit(
-                favorites.map {
-                    it.toDomain()
-                }.toList()
-            )
-        }
+        return favFlow
     }
 
     fun inFavorite(id: Int): Flow<Boolean> {
@@ -59,10 +64,19 @@ class FavoriteService {
 
     fun deleteAFavorite(favorite: FavoriteDto) {
         favorites.remove(favorite)
+        temporaryEmit() // todo delete after retrofit code is ready
     }
 
     fun deleteAllFavorite() {
         favorites.clear()
+        Log.i("TAG", "deleteAllFavorite: $favorites")
+        temporaryEmit() // todo delete after retrofit code is ready
+    }
+
+    fun temporaryEmit() {
+        GlobalScope.launch {
+            favFlow.emit(favorites.map { it.toDomain() })
+        }
     }
 
 }

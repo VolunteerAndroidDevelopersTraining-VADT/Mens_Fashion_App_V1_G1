@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.End
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -60,12 +61,10 @@ fun FavoriteScreen(
     }
 
     Scaffold(
-        backgroundColor = Color.White,
         scaffoldState = scaffoldState,
         topBar = {
             TopAppBar(
                 elevation = 1.dp,
-                backgroundColor = Color.White,
                 title = {
                     Text(
                         modifier = Modifier
@@ -85,7 +84,7 @@ fun FavoriteScreen(
                         Icon(
                             imageVector = Icons.Outlined.Delete,
                             contentDescription = null,
-                            tint = Color.Black
+                            tint = Color.White
                         )
                     }
                 }
@@ -137,7 +136,8 @@ fun FavoriteItem(
             * */
         },
         shape = RoundedCornerShape(8.dp),
-        elevation = 3.dp
+        elevation = 3.dp,
+        backgroundColor = MaterialTheme.colors.secondary
     ) {
         Row {
             Image(
@@ -172,7 +172,6 @@ fun FavoriteItem(
                 Spacer(modifier = Modifier.height(5.dp))
                 Text(
                     text = "$${favorite.price}",
-                    color = Color.Black,
                     fontSize = 22.sp,
                     maxLines = 3,
                     overflow = TextOverflow.Ellipsis,
@@ -186,7 +185,6 @@ fun FavoriteItem(
                 ) {
                     Icon(
                         painter = painterResource(id = R.drawable.ic_heart_fill),
-                        tint = YellowMain,
                         contentDescription = null,
                     )
                 }

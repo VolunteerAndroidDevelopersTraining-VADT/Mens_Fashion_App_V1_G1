@@ -24,8 +24,6 @@ abstract class BaseRepository {
         .catch { throwable ->
             Timber.e("throwable -> ${throwable.message}")
             Timber.e("throwable -> ${throwable.cause}")
-
-
             emit(BaseResponse.Error(throwable = throwable, errorBody = getErrorBody(throwable)))
         }
 

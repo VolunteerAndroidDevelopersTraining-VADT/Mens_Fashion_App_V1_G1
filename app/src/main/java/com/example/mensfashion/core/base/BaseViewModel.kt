@@ -14,6 +14,7 @@ abstract class BaseViewModel(val app: Application) : AndroidViewModel(app) {
     protected fun launchTask(task: suspend () -> Unit) =
         viewModelScope.launch(Dispatchers.IO) { task() }
 
+
     @Inject
     lateinit var pref: SecureSharedPreferences
 

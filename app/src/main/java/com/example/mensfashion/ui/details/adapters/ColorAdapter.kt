@@ -1,13 +1,8 @@
-package com.example.mensfashion.ui.details
+package com.example.mensfashion.ui.details.adapters
 
-import android.content.ContentValues.TAG
 import android.content.res.ColorStateList
-import android.graphics.Color.WHITE
-import android.os.Build
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.appcompat.widget.AppCompatButton
 import androidx.databinding.ViewDataBinding
 import com.example.mensfashion.R
 import com.example.mensfashion.core.base.BaseRecyclerAdapter
@@ -15,7 +10,6 @@ import com.example.mensfashion.core.base.BaseViewHolder
 import com.example.mensfashion.core.onclick
 import com.example.mensfashion.databinding.ColorItemBinding
 import com.example.mensfashion.models.Color
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class ColorAdapter : BaseRecyclerAdapter<Color>() {

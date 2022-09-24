@@ -2,39 +2,27 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
-
-    </data>
+    <data />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_height="42dp"
         android:background="@color/white">
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_size"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:backgroundTint="#CDCCC9"
-            app:fabCustomSize="@dimen/_32sdp" />
 
         <TextView
             android:id="@+id/size"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:elevation="6dp"
-            android:textSize="18dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/size_background"
+            android:gravity="center"
+            android:minWidth="42dp"
             android:textColor="@color/dark_color"
-            app:layout_constraintStart_toStartOf="@id/fab_size"
-            app:layout_constraintEnd_toEndOf="@id/fab_size"
-            app:layout_constraintTop_toTopOf="@id/fab_size"
-            app:layout_constraintBottom_toBottomOf="@id/fab_size"
-            />
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

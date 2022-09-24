@@ -11,7 +11,7 @@ data class ListOfFavoriteProductsResponse(
 ) {
     data class FavoriteResponseData(
         @SerializedName("listOfData")
-        @Expose val data: List<Any> = listOf(),
+        @Expose val data: List<FavoriteItem> = listOf(),
         @SerializedName("page")
         @Expose val page:Int,
         @SerializedName("totalCount")

@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="vm"
             type="com.example.mensfashion.ui.details.DetailsViewModel" />
-        <import type="android.view.View"/>
-    </data>
 
+        <import type="android.view.View" />
+    </data>
 
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.details.DetailsFragment"
         android:background="@color/white"
         android:elevation="@dimen/_8sdp"
+        tools:context=".ui.details.DetailsFragment"
 
         >
 
@@ -25,8 +26,8 @@
             android:id="@+id/appbar"
             android:layout_width="match_parent"
             android:layout_height="280dp"
-            android:fitsSystemWindows="true"
             android:background="@color/white"
+            android:fitsSystemWindows="true"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,10 +51,11 @@
                     android:id="@+id/product_image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:animateLayoutChanges="true"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintHeight_percent=".34"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0"
                     app:sliderAnimationDuration="600"
                     app:sliderAutoCycleDirection="back_and_forth"
@@ -66,11 +68,8 @@
                     app:sliderIndicatorSelectedColor="#5A5A5A"
                     app:sliderIndicatorUnselectedColor="#989393"
                     app:sliderScrollTimeInSec="2"
-                    android:animateLayoutChanges="true"
 
                     />
-
-
 
 
                 <androidx.appcompat.widget.Toolbar
@@ -79,11 +78,11 @@
                     android:layout_height="?attr/actionBarSize"
                     android:visibility="visible"
                     app:layout_collapseMode="pin"
-                    app:popupTheme="@style/ThemeOverlay.AppCompat" >
+                    app:popupTheme="@style/ThemeOverlay.AppCompat">
+
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        >
+                        android:layout_height="match_parent">
 
 
                         <androidx.appcompat.widget.AppCompatImageButton
@@ -92,23 +91,23 @@
                             android:layout_height="match_parent"
                             android:layout_marginEnd="@dimen/_16sdp"
                             android:background="@android:color/transparent"
+                            android:onClick="@{()->vm.onFavouriteClick()}"
                             android:src="@drawable/ic_favorite_border"
                             android:tint="@color/red"
-                            android:onClick="@{()->vm.onFavouriteClick()}"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
+
                         <androidx.appcompat.widget.AppCompatImageButton
                             android:id="@+id/btn_back"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            android:src="@drawable/ic_back"
+                            android:background="@android:color/transparent"
                             android:gravity="start"
                             android:onClick="@{()->vm.onFavouriteClick()}"
-                            android:background="@android:color/transparent"
+                            android:src="@drawable/ic_back"
                             android:tint="@color/black"
-                            />
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </androidx.appcompat.widget.Toolbar>
@@ -122,22 +121,21 @@
             android:layout_marginStart="@dimen/_8sdp"
             android:layout_marginEnd="@dimen/_8sdp"
 
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            >
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
             <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 android:elevation="@dimen/_32sdp"
-                >
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingBottom="100dp"
-                    android:elevation="@dimen/_16sdp"
                     android:background="@drawable/oval_shap"
+                    android:elevation="@dimen/_16sdp"
+                    android:paddingBottom="100dp"
 
 
                     >
@@ -146,15 +144,15 @@
                         android:id="@+id/product_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
                         android:layout_margin="@dimen/_32sdp"
                         android:text="@={vm.productName}"
-
-                        android:textSize="@dimen/_16sdp"
                         android:textColor="@color/black"
-                        app:textAllCaps="false"
+                        android:textSize="@dimen/_16sdp"
+
                         android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:textAllCaps="false"
 
                         />
 
@@ -162,17 +160,18 @@
                         android:id="@+id/product_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
                         android:layout_margin="@dimen/_32sdp"
                         android:text="@={vm.productPrice}"
-
-                        android:textSize="@dimen/_16sdp"
                         android:textColor="@color/orangy"
-                        app:textAllCaps="false"
+                        android:textSize="@dimen/_16sdp"
+
                         android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:textAllCaps="false"
 
                         />
+
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/product_description"
                         android:layout_width="0dp"
@@ -193,26 +192,27 @@
                         android:id="@+id/tv_product_color"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toBottomOf="@id/product_description"
-                        app:layout_constraintStart_toStartOf="parent"
                         android:layout_margin="@dimen/_32sdp"
                         android:text="@string/color"
                         android:textSize="@dimen/_16sdp"
-                        android:visibility="@{vm.coloTextVisibility?View.VISIBLE:View.GONE}"
-                        app:textAllCaps="false"
                         android:textStyle="normal"
+                        android:visibility="@{vm.coloTextVisibility?View.VISIBLE:View.GONE}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/product_description"
+                        app:textAllCaps="false"
 
                         />
+
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recyclerView_color"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toBottomOf="@id/tv_product_color"
-                        app:layout_constraintStart_toStartOf="@id/tv_product_color"
+                        android:layout_marginStart="@dimen/_16sdp"
+                        android:layout_marginEnd="@dimen/_16sdp"
                         android:orientation="horizontal"
                         android:visibility="@{vm.colorVisibility?View.VISIBLE:View.GONE}"
-                        android:layout_marginEnd="@dimen/_16sdp"
-                        android:layout_marginStart="@dimen/_16sdp"
+                        app:layout_constraintStart_toStartOf="@id/tv_product_color"
+                        app:layout_constraintTop_toBottomOf="@id/tv_product_color"
                         tools:listitem="@layout/color_item"
 
 
@@ -222,27 +222,28 @@
                         android:id="@+id/tv_product_size"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="@{vm.sizeTextVisibility?View.VISIBLE:View.GONE}"
-                        app:layout_constraintTop_toBottomOf="@id/recyclerView_color"
-                        app:layout_constraintStart_toStartOf="@id/tv_product_color"
                         android:text="@string/your_size"
                         android:textSize="@dimen/_16sdp"
-                        app:textAllCaps="false"
                         android:textStyle="normal"
+                        android:visibility="@{vm.sizeTextVisibility?View.VISIBLE:View.GONE}"
+                        app:layout_constraintStart_toStartOf="@id/tv_product_color"
+                        app:layout_constraintTop_toBottomOf="@id/recyclerView_color"
+                        app:textAllCaps="false"
 
                         />
+
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recyclerView_size"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toBottomOf="@id/tv_product_size"
-                        app:layout_constraintStart_toStartOf="@id/tv_product_color"
-                        android:orientation="horizontal"
-                        android:layout_marginEnd="@dimen/_16sdp"
                         android:layout_marginStart="@dimen/_16sdp"
-                        tools:listitem="@layout/color_item"
+                        android:layout_marginEnd="@dimen/_16sdp"
+                        android:layout_marginBottom="@dimen/_64sdp"
+                        android:orientation="horizontal"
                         android:visibility="@{vm.sizeVisibility?View.VISIBLE:View.GONE}"
-                           android:layout_marginBottom="@dimen/_64sdp"
+                        app:layout_constraintStart_toStartOf="@id/tv_product_color"
+                        app:layout_constraintTop_toBottomOf="@id/tv_product_size"
+                        tools:listitem="@layout/color_item"
 
                         />
 
@@ -256,17 +257,17 @@
             android:id="@+id/btn_add_cart"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_12sdp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="@dimen/_24sdp"
             android:backgroundTint="@color/orangy"
             android:drawableEnd="@drawable/ic_add_cart"
+            android:onClick="@{()->vm.addToCart()}"
             android:padding="@dimen/_16sdp"
             android:text="@string/add_to_cart"
             android:textAllCaps="false"
             android:textSize="@dimen/_18sdp"
-            app:cornerRadius="@dimen/_16sdp"
             android:textStyle="bold"
-            android:onClick="@{()->vm.addToCart()}"
-            android:layout_gravity="bottom|center_horizontal"
+            app:cornerRadius="@dimen/_16sdp"
 
             />
 

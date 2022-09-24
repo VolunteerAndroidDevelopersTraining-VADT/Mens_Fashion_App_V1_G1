@@ -1,21 +1,18 @@
 package com.example.mensfashion.ui.details
 
 import android.app.Application
-import android.content.ContentValues
 import android.content.ContentValues.TAG
 import android.util.Log
-import android.view.View
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.mensfashion.core.base.BaseViewModel
 import com.example.mensfashion.models.Product
 import com.example.mensfashion.models.ProductItem
+import com.example.mensfashion.ui.details.adapters.ColorAdapter
+import com.example.mensfashion.ui.details.adapters.SizeAdapter
 import com.example.mensfashion.utils.ColorAndSizeStates
 import com.google.gson.Gson
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.scopes.ViewModelScoped
-import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
@@ -28,8 +25,8 @@ class DetailsViewModel @Inject constructor(application: Application):BaseViewMod
     val productDescription = ObservableField("")
     val  productName= ObservableField("")
     var selectionState= ColorAndSizeStates.NON
-    lateinit var    colorAdapter:ColorAdapter
-    lateinit var   sizeAdapter:SizeAdapter
+    lateinit var    colorAdapter: ColorAdapter
+    lateinit var   sizeAdapter: SizeAdapter
     lateinit var  sliderAdapter:SliderAdapterProductDetails
     var quantity = -1
 
@@ -38,14 +35,14 @@ class DetailsViewModel @Inject constructor(application: Application):BaseViewMod
     fun initView(product:ProductItem) {
       sliderAdapter = SliderAdapterProductDetails(product.product_images)
       sizeAdapter = SizeAdapter()
-      colorAdapter=ColorAdapter()
+      colorAdapter= ColorAdapter()
       productPrice.value=(product.price.new_price.toString().plus(" $"))
       productDescription.set(product.product_description)
       productName.set(product.product_name)
 
       colorAdapter.apply {
           submitList(product.color)
-          onItemClick={item, position, _ ->
+          onItemClick={ item, _, _ ->
               if (item.isSelected){
                   if (item.sizes.isNotEmpty()) {
                       sizeTextVisibility.set(true)
